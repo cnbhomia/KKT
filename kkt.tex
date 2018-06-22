@@ -1,0 +1,26 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amssymb,amsmath,latexsym}
+
+\title{Developing accurate KKT formulation for NLP systems}
+
+\begin{document}
+
+\section{Introduction}
+The modern solving strategies for solving constrained non linear optimization problems begin with identification of the Karush-Kuhn-Tucker conditions. For a given NLP model, the solvers create the KKT conditions internally and provide the Lagrangian Multiplers as marginals as part of the solution. However, it is sometimes advantageous to explicitly model the KKT conditions as part of the problem formulation. However, the complexity of the models create possibilities of error in deriving the KKT conditions and modeling them, leading to incorrect or infeasible solutions. Finding the source of the error can be a particularly tedious task. 
+
+In this article, we propose a systematic method for identification of errors in the explicit KKT conditions for solving an NLP. Consider a constrained optimization problem such that 
+
+\begin{equation}
+\begin{aligned}
+&	\min 
+& & f(x) \\
+& \text{s.t.} & & 	 g_{i}(x) \leqslant 0	&	i = 1,2...m \\
+& & &			h_{k}(x) = 0	 &	j = 1,2...p \\
+& & &			d_{l}(x) \geqslant =0		&	l = 1,2...q \\
+& & &			x \in \!R
+\end{aligned}
+\end{equation} 
+
+
+\end{document}
