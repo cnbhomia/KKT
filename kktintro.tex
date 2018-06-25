@@ -1,0 +1,68 @@
+\documentclass[11pt]{article}
+\usepackage{a4wide}
+
+\usepackage[american]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\usepackage{ltablex}
+\keepXColumns
+\usepackage{xcolor}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+\section*{Symbols}
+\subsection*{Sets}
+\begin{tabularx}{\textwidth}{| l | l | X |} 
+\hline 
+\textbf{Name} & \textbf{Domains} & \textbf{Description}\\ 
+\hline 
+\endhead 
+\hline 
+\end{tabularx}
+\subsection*{Parameters}
+\begin{tabularx}{\textwidth}{| l | l | X |} 
+\hline 
+\textbf{Name} & \textbf{Domains} & \textbf{Description}\\ 
+\hline 
+\endhead 
+budget &  & total budget for production \\ 
+\hline 
+\end{tabularx}
+\subsection*{Variables}
+\begin{tabularx}{\textwidth}{| l | l | X |} 
+\hline 
+\textbf{Name} & \textbf{Domains} & \textbf{Description}\\ 
+\hline 
+\endhead 
+h &  & man hours in production \\ 
+s &  & tons of raw material \\ 
+R &  & Revenue \\ 
+\hline 
+\end{tabularx}
+\subsection*{Equations}
+\begin{tabularx}{\textwidth}{| l | l | X |} 
+\hline 
+\textbf{Name} & \textbf{Domains} & \textbf{Description}\\ 
+\hline 
+\endhead 
+\hyperref[con1]{con1}  &  & constraint on budget \\ 
+\hyperref[obj]{obj}  &  & objective function \\ 
+\hline 
+\end{tabularx}
+\section*{Equation Definitions}
+\subsubsection*{$\text{obj}$} \label{obj}
+$
+\textcolor{black}{\text{R}} = - ( 200 \cdot  {\textcolor{black}{\text{h}}}^{ \frac{2}{3} } \cdot  {\textcolor{black}{\text{s}}}^{ \frac{1}{3} } ) 
+$ \vspace{5pt}
+\hrule 
+\subsubsection*{$\text{con1}$} \label{con1}
+$
+20 \cdot \textcolor{black}{\text{h}} + 170 \cdot \textcolor{black}{\text{s}} \leq \textcolor{black}{\text{budget}}
+$ \vspace{5pt}
+\hrule 
+\bigskip
+
+\bigskip
+\end{document}

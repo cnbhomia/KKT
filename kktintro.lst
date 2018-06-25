@@ -1,0 +1,43 @@
+GAMS 25.1.1  r66732 Released May 19, 2018 WEX-WEI x86 64bit/MS Windows                                                                                                                                                                 06/25/18 15:38:17 Page 1
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+C o m p i l a t i o n
+
+
+      The model below showcases using GAMS to identify / modify the KKT conditions for a given
+      NLP formulation. Our starting point is a basic minimization NLP model.
+   5  scalar
+   6      labor 'cost of labor dollar per hour' /20/
+   7      steel 'cost of steel per ton'         /170/
+   8      budget 'total budget for production' /20000/
+   9      ;
+  10   
+  11  variables
+  12      h 'man hours in production' /lo 1, up 50000/
+  13      s 'tons of raw material' /lo 1, up 50000/
+  14      R 'Revenue'
+  15      ;
+  16  Equations
+  17      con1 'constraint on budget'
+  18      obj 'objective function'
+  19      ;
+  20  obj.. R =e= - 200 * h**(2/3) * s**(1/3) ;
+  21  con1.. 20*h + 170*s =l= budget;
+  22   
+  23  h.l=10;
+  24  s.l=10;
+  25  *option nlp=examiner;
+  26  model khan /con1,obj/;
+  27  solve khan using NLP minimizing R;
+
+
+COMPILATION TIME     =        0.031 SECONDS      2 MB  25.1.1 r66732 WEX-WEI
+
+
+USER: Chintan Bhomia, Single User License            G180612/0001CN-GEN
+      GAMS Development, Fairfax                                 DC14199
+
+
+**** FILE SUMMARY
+
+Input      C:\Users\cnbho\Documents\GitHub\KKT\kktintro.gms
+Output     C:\Users\cnbho\Documents\GitHub\KKT\kktintro.lst
