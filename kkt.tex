@@ -1,7 +1,7 @@
 \documentclass{article}
 \usepackage{graphicx}
 \usepackage{amssymb,amsmath,latexsym}
-%\userpackage{textcomp}
+\usepackage{listings}
 \title{Developing accurate KKT formulation for NLP systems}
 
 \begin{document}
@@ -70,14 +70,15 @@ In it's standard form, the model can be written as :
 &	\min
 & & R(h,s) = - 200 h^{2/3}s^{1/3}  \\
 & \text{s.t.} & & 	 20h + 170s = 20000 \\
-& & &			h > 0	 &	s > 0 \\
+& & &			L< h,s < U   \\
 \end{aligned}
 \end{equation}
 
 The GAMS program below gives the optimum value of revenue at $h = 666.67 , s = 38.21$.
 
+\lstinputlisting[language=Octave]{codes/kktintro.gms}
 
-
+The above non-linear model is solved 
 
 
 
