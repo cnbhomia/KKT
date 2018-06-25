@@ -1,2 +1,0 @@
-latexmk
-@pause
