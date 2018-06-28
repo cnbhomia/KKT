@@ -1,4 +1,3 @@
-*------------------CODE BEGINS------------------*
 $ontext
 The model below showcases using GAMS to identify / modify the KKT conditions for a given
 NLP formulation. Our starting point is a basic minimization NLP model.
@@ -23,8 +22,8 @@ con1.. 20*h + 170*s =l= budget;
 
 h.l=10;
 s.l=10;
-*option nlp=examiner;
 model khan /con1,obj/;
 solve khan using NLP minimizing R;
-
-*------------------CODE ENDS------------------*
+$gdxout kktintro
+$unload R h s
+$gdxout

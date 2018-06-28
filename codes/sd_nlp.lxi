@@ -1,0 +1,15 @@
+B 2 C o m p i l a t i o n
+B 36 Equation Listing    SOLVE khan Using NLP From line 27
+D 37 con1
+D 43 obj
+B 50 Column Listing      SOLVE khan Using NLP From line 27
+E 51 h
+E 60 s
+E 68 R
+B 77 Model Statistics    SOLVE khan Using NLP From line 27
+B 95 Solution Report     SOLVE khan Using NLP From line 27
+F 140 con1
+F 141 obj
+G 145 h
+G 149 s
+G 150 R
