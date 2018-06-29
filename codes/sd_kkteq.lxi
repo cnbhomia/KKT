@@ -1,0 +1,17 @@
+B 2 C o m p i l a t i o n
+B 33 Equation Listing    SOLVE kkt Using MCP From line 49
+D 34 dLdh
+D 40 dLds
+D 45 con1
+B 52 Column Listing      SOLVE kkt Using MCP From line 49
+E 53 h
+E 62 s
+E 70 con1_m
+B 80 Model Statistics    SOLVE kkt Using MCP From line 49
+B 98 Solution Report     SOLVE kkt Using MCP From line 49
+F 147 dLdh
+F 148 dLds
+F 149 con1
+G 154 h
+G 158 s
+G 159 con1_m
