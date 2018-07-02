@@ -1,0 +1,286 @@
+GAMS 25.1.1  r66732 Released May 19, 2018 DEX-DEG x86 64bit/Mac OS X - 07/02/18 16:48:11 Page 7
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+C o m p i l a t i o n
+
+
+  85  variables
+  86       p(i) 'multipler for equation sssdef(i)'
+  87       q(j) 'multipler for equations tttdef(j)'
+  88       r1 ' multipler for esum' /lo 0 /
+  89       r2 ' multipler for ssum' /lo 0/
+  90       s1 ' multipler for allbnd' /up 0/
+  91       ;
+  92   
+  93  equations
+  94       dLdttt(j)
+  95       dLdsss(i)
+  96       dLdx(j)
+  97  *dLdx(i,j+1)
+  98       ;
+  99   
+ 100  *assigning marginal(.m) from NLP result to variable marginal con1_m
+ 101  p.l(i)= sssdef.m(i);
+ 102  q.l(j) =tttdef.m(j);
+ 103  r1.l = esum.m;
+ 104  r2.l = ssum.m;
+ 105  s1.l = allbnd.m;
+ 106   
+ 107  *dLdttt(j)..  37 =n= 0;ttt.fx(j)=ttt.l(j);
+ 108   
+ 109  dLdttt(j).. sum(i,p(i)*A(i,j)) - q(j) - s1 =n= 0;
+ 110   
+ 111  dLdsss(i).. 37 =n= 0;               sss.fx(i) = sss.l(i);
+ 112   
+ 113   
+ 114  dLdx(j).. r1 + r2 + s1 =n= 0;   x.fx(j) = x.l(j);
+ 115   
+ 116   
+ 117   
+ 118  model nlpkkt / dLdttt.q , dLdsss.sss, dLdx.x, esum.r1, ssum.r2, allbnd.s1 / ;
+ 119  *model nlpkkt / dLdttt.ttt , dLdsss.sss, dLdx.x , dLdr1.r1, dLdr2.r2, dLds1.s1 / ;
+ 120  *nlpkkt.iterlim=20;
+ 121  solve nlpkkt using MCP;
+ 122   
+ 123  *abort $(nlpkkt.objval >1e-5) 'We should start at a solution';
+
+
+COMPILATION TIME     =        0.000 SECONDS      3 MB  25.1.1 r66732 DEX-DEG
+GAMS 25.1.1  r66732 Released May 19, 2018 DEX-DEG x86 64bit/Mac OS X - 07/02/18 16:48:11 Page 8
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Equation Listing    SOLVE nlpkkt Using MCP From line 121
+
+
+---- dLdttt  =N=  
+
+dLdttt(j1)..  p(i1) - q(j1) - s1 =N= 0 ; (LHS = 0)
+     
+dLdttt(j2)..  4*p(i1) - 2*p(i3) - q(j2) - s1 =N= 0 ; (LHS = 0)
+     
+dLdttt(j3)..  2*p(i1) + 4*p(i2) - 2*p(i3) - q(j3) - s1 =N= 0 ; (LHS = 0)
+     
+dLdttt(j4)..  p(i2) - q(j4) - s1 =N= 0 ; (LHS = 0)
+     
+dLdttt(j5)..  2*p(i2) - p(i3) - q(j5) - s1 =N= 0 ; (LHS = 0)
+     
+dLdttt(j6)..  2*p(i1) + 4*p(i3) - q(j6) - s1 =N= 0 ; (LHS = 0)
+     
+
+---- dLdsss  =N=  
+
+                NONE
+
+
+---- dLdx  =N=  
+
+dLdx(j1)..  r1 + r2 + s1 =N= 0 ; (LHS = 15.8497640554641)
+     
+dLdx(j2)..  r1 + r2 + s1 =N= 0 ; (LHS = 15.8497640554641)
+     
+dLdx(j3)..  r1 + r2 + s1 =N= 0 ; (LHS = 15.8497640554641)
+     
+dLdx(j4)..  r1 + r2 + s1 =N= 0 ; (LHS = 15.8497640554641)
+     
+dLdx(j5)..  r1 + r2 + s1 =N= 0 ; (LHS = 15.8497640554641)
+     
+dLdx(j6)..  r1 + r2 + s1 =N= 0 ; (LHS = 15.8497640554641)
+     
+
+---- eSum  =G=  
+
+eSum..  (0.439434906278059)*x(j2) + (0.367879441171442)*x(j4) + (1.32480621151328)*x(j5) + (0.367879441171442)*x(j6) =G= 2.5 ; (LHS = 2.50000000013422)
+     
+
+---- sSum  =G=  
+
+sSum..  sss(i1) + sss(i2) =G= -100 ; (LHS = 18.3329457664637)
+     
+
+---- allBnd  =L=  
+
+allBnd..  ttt(j1) + ttt(j2) + ttt(j3) + ttt(j4) + ttt(j5) + ttt(j6) + sss(i1) + sss(i2) + sss(i3) + x(j1) + x(j2) + x(j3) + x(j4) + x(j5) + x(j6) =L= 20 ; (LHS = 20)
+     
+GAMS 25.1.1  r66732 Released May 19, 2018 DEX-DEG x86 64bit/Mac OS X - 07/02/18 16:48:11 Page 9
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Column Listing      SOLVE nlpkkt Using MCP From line 121
+
+
+---- ttt  
+
+ttt(j1)
+                (.LO, .L, .UP, .M = -INF, 0.177734318591591, +INF, 0)
+        1       allBnd
+
+ttt(j2)
+                (.LO, .L, .UP, .M = -INF, 0.845939653326557, +INF, 0)
+        1       allBnd
+
+ttt(j3)
+                (.LO, .L, .UP, .M = -INF, 0.540009515840778, +INF, 0)
+        1       allBnd
+
+REMAINING 3 ENTRIES SKIPPED
+
+---- sss  
+
+sss(i1)
+                (.LO, .L, .UP, .M = 4.64151196357937, 4.64151196357937, 4.64151196357937, 0)
+        1       sSum
+        1       allBnd
+
+sss(i2)
+                (.LO, .L, .UP, .M = 13.6914338028843, 13.6914338028843, 13.6914338028843, 0)
+        1       sSum
+        1       allBnd
+
+sss(i3)
+                (.LO, .L, .UP, .M = -7.89696311145521, -7.89696311145521, -7.89696311145521, 0)
+        1       allBnd
+
+
+---- x  
+
+x(j1)
+                (.LO, .L, .UP, .M = 0, 0, 0, 98.0840590639371)
+        1       allBnd
+
+x(j2)
+                (.LO, .L, .UP, .M = 0.177734318591591, 0.177734318591591, 0.177734318591591, 0)
+       (0.4394) eSum
+        1       allBnd
+
+x(j3)
+                (.LO, .L, .UP, .M = 0.135002378960194, 0.135002378960194, 0.135002378960194, -5.22043208661671E-9)
+        1       allBnd
+
+REMAINING 3 ENTRIES SKIPPED
+
+---- p  multipler for equation sssdef(i)
+
+p(i1)
+                (.LO, .L, .UP, .M = -INF, 4.72213096663676, +INF, 0)
+        1       dLdttt(j1)
+        4       dLdttt(j2)
+        2       dLdttt(j3)
+        2       dLdttt(j6)
+
+p(i2)
+                (.LO, .L, .UP, .M = -INF, 2.82197464524665, +INF, 0)
+        4       dLdttt(j3)
+        1       dLdttt(j4)
+        2       dLdttt(j5)
+
+p(i3)
+                (.LO, .L, .UP, .M = -INF, 19.6451808165676, +INF, 0)
+       -2       dLdttt(j2)
+       -2       dLdttt(j3)
+       -1       dLdttt(j5)
+        4       dLdttt(j6)
+
+
+---- q  multipler for equations tttdef(j)
+
+q(j1)
+                (.LO, .L, .UP, .M = -INF, 20.1612380061148, +INF, 0)
+       -1       dLdttt(j1)
+
+q(j2)
+                (.LO, .L, .UP, .M = -INF, -4.96273072711015, +INF, 0)
+       -1       dLdttt(j2)
+
+q(j3)
+                (.LO, .L, .UP, .M = -INF, -3.11909407939707, +INF, 0)
+       -1       dLdttt(j3)
+
+REMAINING 3 ENTRIES SKIPPED
+
+---- r1   multipler for esum
+
+r1
+                (.LO, .L, .UP, .M = 0, 31.2888710949421, +INF, 0)
+        1       dLdx(j1)
+        1       dLdx(j2)
+        1       dLdx(j3)
+        1       dLdx(j4)
+        1       dLdx(j5)
+        1       dLdx(j6)
+
+
+---- r2   multipler for ssum
+
+r2
+                (.LO, .L, .UP, .M = 0, 0, +INF, 0)
+        1       dLdx(j1)
+        1       dLdx(j2)
+        1       dLdx(j3)
+        1       dLdx(j4)
+        1       dLdx(j5)
+        1       dLdx(j6)
+
+
+---- s1   multipler for allbnd
+
+s1
+                (.LO, .L, .UP, .M = -INF, -15.439107039478, 0, 0)
+       -1       dLdttt(j1)
+       -1       dLdttt(j2)
+       -1       dLdttt(j3)
+       -1       dLdttt(j4)
+       -1       dLdttt(j5)
+       -1       dLdttt(j6)
+        1       dLdx(j1)
+        1       dLdx(j2)
+        1       dLdx(j3)
+        1       dLdx(j4)
+        1       dLdx(j5)
+        1       dLdx(j6)
+
+
+**** Counts do not match
+     Single equations in unmatched =E= blocks        0
+     Unmatched single free variables                 9
+
+**** Unmatched free variables = 9
+     ttt(j1)
+     ttt(j2)
+     ttt(j3)
+     ttt(j4)
+     ttt(j5)
+     ttt(j6)
+     p(i1)
+     p(i2)
+     p(i3)
+
+**** Number of unmatched =E= rows : 0
+GAMS 25.1.1  r66732 Released May 19, 2018 DEX-DEG x86 64bit/Mac OS X - 07/02/18 16:48:11 Page 10
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE nlpkkt Using MCP From line 121
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           6     SINGLE EQUATIONS           15
+BLOCKS OF VARIABLES           8     SINGLE VARIABLES           27
+NON ZERO ELEMENTS            62     NON LINEAR N-Z              4
+DERIVATIVE POOL              20     CONSTANT POOL              17
+CODE LENGTH                  17
+
+
+GENERATION TIME      =        0.006 SECONDS      4 MB  25.1.1 r66732 DEX-DEG
+
+**** SOLVE from line 121 ABORTED, EXECERROR = 1
+
+
+EXECUTION TIME       =        0.007 SECONDS      4 MB  25.1.1 r66732 DEX-DEG
+
+
+USER: Chintan Bhomia, Single User License            G180612/0001CN-GEN
+      GAMS Development, Fairfax                                 DC14199
+
+
+**** FILE SUMMARY
+
+Restart    /Users/cbhomia/Documents/GitHub/KKT/codes/aaa.g00
+Input      /Users/cbhomia/Documents/GitHub/KKT/codes/nlpExamplekkt.gms
+Output     /Users/cbhomia/Documents/GitHub/KKT/codes/nlpExamplekkt.lst
+
+**** USER ERROR(S) ENCOUNTERED

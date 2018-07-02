@@ -1,0 +1,18 @@
+B 2 C o m p i l a t i o n
+B 49 Equation Listing    SOLVE nlpkkt Using MCP From line 121
+D 50 dLdttt
+D 66 dLdsss
+D 71 dLdx
+D 86 eSum
+D 91 sSum
+D 96 allBnd
+B 103 Column Listing      SOLVE nlpkkt Using MCP From line 121
+E 104 ttt
+E 121 sss
+E 138 x
+E 155 p
+E 178 q
+E 194 r1
+E 206 r2
+E 218 s1
+B 255 Model Statistics    SOLVE nlpkkt Using MCP From line 121

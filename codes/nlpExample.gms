@@ -26,7 +26,7 @@ sets
   j2(j)                 / j2, j4*j6 /
   i                     / i1 * i3 /
   i2(i)                 / i1, i2 /
-  ;
+  ; 
 scalar
   eMin / 2.5 /
   sLow / -100 /
@@ -73,11 +73,12 @@ equation
 objDef.. sum{j, c(j)*x(j)} + sum{i, sqr(sss(i)-s0(i))} =E= z;
 sssDef(i).. sss(i) =E= sum{j, A(i,j) * ttt(j)};
 tttDef(j).. ttt(j) =E= 4*x(j) + x(j+1);
-eSum..      sum{j2(j), exp(x(j)-1)} =G= eMin;
-sSum..      sum{i2(i), sss(i)} =G= sLow;
-allBnd..    sum{j, x(j) + ttt(j)} + sum{i, sss(i)} =L= vMax;
+eSum..      sum{j2(j), exp(x(j)-1)} - eMin =G= 0;
+sSum..      sum{i2(i), sss(i)} - sLow =G= 0;
+allBnd..    sum{j, x(j) + ttt(j)} + sum{i, sss(i)} -vMax =L= 0;
 
 model m 'NLP model' / all /;
 option
     limrow =10;
 solve m using nlp min z;
+display sssdef.m , tttdef.m;

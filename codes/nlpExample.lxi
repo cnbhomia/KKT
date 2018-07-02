@@ -1,18 +1,18 @@
 B 2 C o m p i l a t i o n
-B 91 Equation Listing    SOLVE m Using NLP From line 83
-D 92 objDef
-D 98 sssDef
-D 107 tttDef
-D 122 eSum
-D 127 sSum
-D 132 allBnd
-B 139 Column Listing      SOLVE m Using NLP From line 83
-E 140 z
-E 148 ttt
-E 173 sss
-E 196 x
-B 223 Model Statistics    SOLVE m Using NLP From line 83
-B 241 Solution Report     SOLVE m Using NLP From line 83
+B 92 Equation Listing    SOLVE m Using NLP From line 83
+D 93 objDef
+D 99 sssDef
+D 108 tttDef
+D 123 eSum
+D 128 sSum
+D 133 allBnd
+B 140 Column Listing      SOLVE m Using NLP From line 83
+E 141 z
+E 149 ttt
+E 174 sss
+E 197 x
+B 224 Model Statistics    SOLVE m Using NLP From line 83
+B 242 Solution Report     SOLVE m Using NLP From line 83
 F 288 objDef
 F 294 sssDef
 F 302 tttDef
@@ -23,3 +23,6 @@ G 314 z
 G 320 ttt
 G 331 sss
 G 339 x
+B 358 E x e c u t i o n
+I 359 sssDef
+I 365 tttDef

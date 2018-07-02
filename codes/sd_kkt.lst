@@ -1,4 +1,4 @@
-GAMS 25.1.1  r66732 Released May 19, 2018 DEX-DEG x86 64bit/Mac OS X - 06/28/18 16:07:59 Page 6
+GAMS 25.1.1  r66732 Released May 19, 2018 DEX-DEG x86 64bit/Mac OS X - 07/02/18 16:20:56 Page 6
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 C o m p i l a t i o n
 
@@ -13,21 +13,22 @@ C o m p i l a t i o n
   36   
   37  con1_m.l=con1.m;
   38  dLdh.. - 200*(2/3) * ([h**(2/3)]/h)  * s**(1/3) - con1_m*(20) =n=0;
-  39  *dLds.. - 200 * h**(2/3) * (1/3)*s**(-2/3) - con1_m*(170) =n=0;
+  39  dLds.. - 200 * h**(2/3) * (1/3)*s**(-2/3) - con1_m*(170) =n=0;
   40   
-  41  *dLdh.. 37 =n=0 ;            h.fx=h.L;
-  42  dLds.. 37 + con1_m=n=0;             s.fx=s.L;
-  43  model kkt /dLdh.h,dLds.s,con1.con1_m/;
-  44  kkt.iterlim=0;
-  45  solve kkt using MCP;
-  46   
-  47  abort $(kkt.objval >1e-5) 'We should start at a solution';
+  41  *dLdh.. 37 =n=0 ;
+  42  h.fx=h.L;
+  43  *dLds.. 37 + con1_m=n=0;             s.fx=s.L;
+  44  model kkt /dLdh.h,dLds.s,con1.con1_m/;
+  45  kkt.iterlim=0;
+  46  solve kkt using MCP;
+  47   
+  48  abort $(kkt.objval >1e-5) 'We should start at a solution';
 
 
-COMPILATION TIME     =        0.000 SECONDS      2 MB  25.1.1 r66732 DEX-DEG
-GAMS 25.1.1  r66732 Released May 19, 2018 DEX-DEG x86 64bit/Mac OS X - 06/28/18 16:07:59 Page 7
+COMPILATION TIME     =        0.001 SECONDS      2 MB  25.1.1 r66732 DEX-DEG
+GAMS 25.1.1  r66732 Released May 19, 2018 DEX-DEG x86 64bit/Mac OS X - 07/02/18 16:20:56 Page 7
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
-Equation Listing    SOLVE kkt Using MCP From line 45
+Equation Listing    SOLVE kkt Using MCP From line 46
 
 
 ---- dLdh  =N=  gradL wrt h
@@ -37,31 +38,33 @@ dLdh..  (0.0259274079155214)*h - (0.440765934563863)*s - 20*con1_m =N= 0 ; (LHS 
 
 ---- dLds  =N=  gradL wrt s
 
-dLds..  con1_m =N= -37 ; (LHS = -2.59274079155213)
+dLds..  - (0.440765934563863)*h + (7.49302088758567)*s - 170*con1_m =N= 0 ; (LHS = 0)
      
 
 ---- con1  =L=  constraint on budget
 
 con1..  20*h + 170*s =L= 20000 ; (LHS = 20000)
      
-GAMS 25.1.1  r66732 Released May 19, 2018 DEX-DEG x86 64bit/Mac OS X - 06/28/18 16:07:59 Page 8
+GAMS 25.1.1  r66732 Released May 19, 2018 DEX-DEG x86 64bit/Mac OS X - 07/02/18 16:20:56 Page 8
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
-Column Listing      SOLVE kkt Using MCP From line 45
+Column Listing      SOLVE kkt Using MCP From line 46
 
 
 ---- h  man hours in production
 
 h
-                (.LO, .L, .UP, .M = 1, 666.666666666667, 50000, 0)
+                (.LO, .L, .UP, .M = 666.666666666667, 666.666666666667, 666.666666666667, 0)
        (0.0259) dLdh
+      (-0.4408) dLds
        20       con1
 
 
 ---- s  tons of raw material
 
 s
-                (.LO, .L, .UP, .M = 39.2156862745098, 39.2156862745098, 39.2156862745098, EPS)
+                (.LO, .L, .UP, .M = 1, 39.2156862745098, 50000, EPS)
       (-0.4408) dLdh
+       (7.493)  dLds
       170       con1
 
 
@@ -70,41 +73,41 @@ s
 con1_m
                 (.LO, .L, .UP, .M = -INF, -2.59274079155213, 0, 0)
       -20       dLdh
-        1       dLds
+     -170       dLds
 
-GAMS 25.1.1  r66732 Released May 19, 2018 DEX-DEG x86 64bit/Mac OS X - 06/28/18 16:07:59 Page 9
+GAMS 25.1.1  r66732 Released May 19, 2018 DEX-DEG x86 64bit/Mac OS X - 07/02/18 16:20:56 Page 9
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
-Model Statistics    SOLVE kkt Using MCP From line 45
+Model Statistics    SOLVE kkt Using MCP From line 46
 
 
 MODEL STATISTICS
 
 BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS            3
 BLOCKS OF VARIABLES           3     SINGLE VARIABLES            3
-NON ZERO ELEMENTS             6     NON LINEAR N-Z              2
-DERIVATIVE POOL              20     CONSTANT POOL              19
-CODE LENGTH                  13
+NON ZERO ELEMENTS             8     NON LINEAR N-Z              4
+DERIVATIVE POOL              20     CONSTANT POOL              21
+CODE LENGTH                  25
 
 
-GENERATION TIME      =        0.005 SECONDS      3 MB  25.1.1 r66732 DEX-DEG
+GENERATION TIME      =        0.003 SECONDS      3 MB  25.1.1 r66732 DEX-DEG
 
 
-EXECUTION TIME       =        0.005 SECONDS      3 MB  25.1.1 r66732 DEX-DEG
-GAMS 25.1.1  r66732 Released May 19, 2018 DEX-DEG x86 64bit/Mac OS X - 06/28/18 16:07:59 Page 10
+EXECUTION TIME       =        0.004 SECONDS      3 MB  25.1.1 r66732 DEX-DEG
+GAMS 25.1.1  r66732 Released May 19, 2018 DEX-DEG x86 64bit/Mac OS X - 07/02/18 16:20:56 Page 10
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
-Solution Report     SOLVE kkt Using MCP From line 45
+Solution Report     SOLVE kkt Using MCP From line 46
 
 
                S O L V E      S U M M A R Y
 
      MODEL   kkt                 
      TYPE    MCP                 
-     SOLVER  PATH                FROM LINE  45
+     SOLVER  PATH                FROM LINE  46
 
 **** SOLVER STATUS     1 Normal Completion         
 **** MODEL STATUS      1 Optimal                   
 
- RESOURCE USAGE, LIMIT          0.008      1000.000
+ RESOURCE USAGE, LIMIT          0.004      1000.000
  ITERATION COUNT, LIMIT         0             0
  EVALUATION ERRORS              0             0
 2 row/cols, 3 non-zeros, 75.00% dense.
@@ -124,7 +127,7 @@ Two-Norm of Grad Fischer Fcn. .  0.0000e+00
                            LOWER          LEVEL          UPPER         MARGINAL
 
 ---- EQU dLdh              -INF             .            +INF          666.6667      
----- EQU dLds              -INF           34.4073        +INF           39.2157      
+---- EQU dLds              -INF             .            +INF           39.2157      
 ---- EQU con1              -INF        20000.0000     20000.0000        -2.5927      
 
   dLdh  gradL wrt h
@@ -133,8 +136,8 @@ Two-Norm of Grad Fischer Fcn. .  0.0000e+00
 
                            LOWER          LEVEL          UPPER         MARGINAL
 
----- VAR h                  1.0000       666.6667     50000.0000          .          
----- VAR s                 39.2157        39.2157        39.2157        34.4073      
+---- VAR h                666.6667       666.6667       666.6667         EPS         
+---- VAR s                  1.0000        39.2157     50000.0000          .          
 ---- VAR con1_m            -INF           -2.5927          .              .          
 
   h  man hours in production
@@ -147,7 +150,7 @@ Two-Norm of Grad Fischer Fcn. .  0.0000e+00
                              0  UNBOUNDED
                              0  REDEFINED
                              0     ERRORS
-GAMS 25.1.1  r66732 Released May 19, 2018 DEX-DEG x86 64bit/Mac OS X - 06/28/18 16:07:59 Page 11
+GAMS 25.1.1  r66732 Released May 19, 2018 DEX-DEG x86 64bit/Mac OS X - 07/02/18 16:20:56 Page 11
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 E x e c u t i o n
 

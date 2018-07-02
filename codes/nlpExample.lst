@@ -1,4 +1,4 @@
-GAMS 25.1.1  r66732 Released May 19, 2018 DEX-DEG x86 64bit/Mac OS X - 06/29/18 18:57:41 Page 1
+GAMS 25.1.1  r66732 Released May 19, 2018 DEX-DEG x86 64bit/Mac OS X - 07/02/18 16:44:35 Page 1
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 C o m p i l a t i o n
 
@@ -31,9 +31,9 @@ C o m p i l a t i o n
   28    i2(i)                 / i1, i2 /
   29    ;
   30  scalar
-  31    eMin / 3 /
-  32    sLow / -90 /
-  33    vMax / 30 /
+  31    eMin / 2.5 /
+  32    sLow / -100 /
+  33    vMax / 20 /
   34    ;
   35  parameter
   36    c(j) /
@@ -76,18 +76,19 @@ C o m p i l a t i o n
   73  objDef.. sum{j, c(j)*x(j)} + sum{i, sqr(sss(i)-s0(i))} =E= z;
   74  sssDef(i).. sss(i) =E= sum{j, A(i,j) * ttt(j)};
   75  tttDef(j).. ttt(j) =E= 4*x(j) + x(j+1);
-  76  eSum..      sum{j2(j), exp(x(j)-1)} =G= eMin;
-  77  sSum..      sum{i2(i), sss(i)} =G= sLow;
-  78  allBnd..    sum{j, x(j) + ttt(j)} + sum{i, sss(i)} =L= vMax;
+  76  eSum..      sum{j2(j), exp(x(j)-1)} - eMin =G= 0;
+  77  sSum..      sum{i2(i), sss(i)} - sLow =G= 0;
+  78  allBnd..    sum{j, x(j) + ttt(j)} + sum{i, sss(i)} -vMax =L= 0;
   79   
   80  model m 'NLP model' / all /;
   81  option
   82      limrow =10;
   83  solve m using nlp min z;
+  84  display sssdef.m , tttdef.m;
 
 
 COMPILATION TIME     =        0.001 SECONDS      3 MB  25.1.1 r66732 DEX-DEG
-GAMS 25.1.1  r66732 Released May 19, 2018 DEX-DEG x86 64bit/Mac OS X - 06/29/18 18:57:41 Page 2
+GAMS 25.1.1  r66732 Released May 19, 2018 DEX-DEG x86 64bit/Mac OS X - 07/02/18 16:44:35 Page 2
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Equation Listing    SOLVE m Using NLP From line 83
 
@@ -123,19 +124,19 @@ tttDef(j6)..  ttt(j6) - 4*x(j6) =E= 0 ; (LHS = 0)
 
 ---- eSum  =G=  
 
-eSum..  (0.367879441171442)*x(j2) + (0.367879441171442)*x(j4) + (0.367879441171442)*x(j5) + (0.367879441171442)*x(j6) =G= 3 ; (LHS = 1.47151776468577, INFES = 1.52848223531423 ****)
+eSum..  (0.367879441171442)*x(j2) + (0.367879441171442)*x(j4) + (0.367879441171442)*x(j5) + (0.367879441171442)*x(j6) =G= 2.5 ; (LHS = 1.47151776468577, INFES = 1.02848223531423 ****)
      
 
 ---- sSum  =G=  
 
-sSum..  sss(i1) + sss(i2) =G= -90 ; (LHS = 0)
+sSum..  sss(i1) + sss(i2) =G= -100 ; (LHS = 0)
      
 
 ---- allBnd  =L=  
 
-allBnd..  ttt(j1) + ttt(j2) + ttt(j3) + ttt(j4) + ttt(j5) + ttt(j6) + sss(i1) + sss(i2) + sss(i3) + x(j1) + x(j2) + x(j3) + x(j4) + x(j5) + x(j6) =L= 30 ; (LHS = 0)
+allBnd..  ttt(j1) + ttt(j2) + ttt(j3) + ttt(j4) + ttt(j5) + ttt(j6) + sss(i1) + sss(i2) + sss(i3) + x(j1) + x(j2) + x(j3) + x(j4) + x(j5) + x(j6) =L= 20 ; (LHS = 0)
      
-GAMS 25.1.1  r66732 Released May 19, 2018 DEX-DEG x86 64bit/Mac OS X - 06/29/18 18:57:41 Page 3
+GAMS 25.1.1  r66732 Released May 19, 2018 DEX-DEG x86 64bit/Mac OS X - 07/02/18 16:44:35 Page 3
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Column Listing      SOLVE m Using NLP From line 83
 
@@ -219,7 +220,7 @@ x(j3)
         1       allBnd
 
 REMAINING 3 ENTRIES SKIPPED
-GAMS 25.1.1  r66732 Released May 19, 2018 DEX-DEG x86 64bit/Mac OS X - 06/29/18 18:57:41 Page 4
+GAMS 25.1.1  r66732 Released May 19, 2018 DEX-DEG x86 64bit/Mac OS X - 07/02/18 16:44:35 Page 4
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Model Statistics    SOLVE m Using NLP From line 83
 
@@ -237,7 +238,7 @@ GENERATION TIME      =        0.002 SECONDS      4 MB  25.1.1 r66732 DEX-DEG
 
 
 EXECUTION TIME       =        0.002 SECONDS      4 MB  25.1.1 r66732 DEX-DEG
-GAMS 25.1.1  r66732 Released May 19, 2018 DEX-DEG x86 64bit/Mac OS X - 06/29/18 18:57:41 Page 5
+GAMS 25.1.1  r66732 Released May 19, 2018 DEX-DEG x86 64bit/Mac OS X - 07/02/18 16:44:35 Page 5
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Solution Report     SOLVE m Using NLP From line 83
 
@@ -250,10 +251,10 @@ Solution Report     SOLVE m Using NLP From line 83
 
 **** SOLVER STATUS     1 Normal Completion         
 **** MODEL STATUS      2 Locally Optimal           
-**** OBJECTIVE VALUE                6.4070
+**** OBJECTIVE VALUE               75.4112
 
  RESOURCE USAGE, LIMIT          0.001      1000.000
- ITERATION COUNT, LIMIT        19    2000000000
+ ITERATION COUNT, LIMIT        12    2000000000
  EVALUATION ERRORS              0             0
 CONOPT 3         25.1.1 r66732 Released May 19, 2018 DEG x86 64bit/Mac OS X   
  
@@ -279,8 +280,7 @@ CONOPT 3         25.1.1 r66732 Released May 19, 2018 DEG x86 64bit/Mac OS X
  
  CONOPT time Total                            0.001 seconds
    of which: Function evaluations             0.000 =  0.0%
-             1st Derivative evaluations       0.000 =  0.0%
-             2nd Derivative evaluations       0.000 =  0.0%
+             1st Derivative evaluations       0.001 =100.0%
              Directional 2nd Derivative       0.000 =  0.0%
  
 
@@ -292,30 +292,30 @@ CONOPT 3         25.1.1 r66732 Released May 19, 2018 DEG x86 64bit/Mac OS X
 
           LOWER          LEVEL          UPPER         MARGINAL
 
-i1          .              .              .            -0.4294      
-i2          .              .              .            -0.5451      
-i3          .              .              .            -0.1430      
+i1          .              .              .             4.7221      
+i2          .              .              .             2.8220      
+i3          .              .              .            19.6452      
 
 ---- EQU tttDef  
 
           LOWER          LEVEL          UPPER         MARGINAL
 
-j1          .              .              .             1.3113      
-j2          .              .              .             0.3092      
-j3          .              .              .            -1.0125      
-j4          .              .              .             1.1956      
-j5          .              .              .             0.7935      
-j6          .              .              .             0.3099      
+j1          .              .              .            20.1612      
+j2          .              .              .            -4.9627      
+j3          .              .              .            -3.1191      
+j4          .              .              .            18.2611      
+j5          .              .              .             1.4379      
+j6          .              .              .           103.4641      
 
                            LOWER          LEVEL          UPPER         MARGINAL
 
----- EQU eSum               3.0000         3.0000        +INF            4.6247      
----- EQU sSum             -90.0000        27.7721        +INF             .          
----- EQU allBnd            -INF           30.0000        30.0000        -1.7407      
+---- EQU eSum               2.5000         2.5000        +INF           31.2889      
+---- EQU sSum            -100.0000        18.3329        +INF             .          
+---- EQU allBnd            -INF           20.0000        20.0000       -15.4391      
 
                            LOWER          LEVEL          UPPER         MARGINAL
 
----- VAR z                 -INF            6.4070        +INF             .          
+---- VAR z                 -INF           75.4112        +INF             .          
 
   z  objective var
 
@@ -323,40 +323,54 @@ j6          .              .              .             0.3099
 
           LOWER          LEVEL          UPPER         MARGINAL
 
-j1        -INF            0.2966        +INF             .          
-j2        -INF            1.4813        +INF             .          
-j3        -INF            1.1796        +INF             .          
-j4        -INF            1.5617        +INF             .          
-j5        -INF            6.2886        +INF             .          
-j6        -INF            0.1671        +INF             .          
+j1        -INF            0.1777        +INF             .          
+j2        -INF            0.8459        +INF             .          
+j3        -INF            0.5400        +INF             .          
+j4        -INF            1.2813        +INF             .          
+j5        -INF            5.1251        +INF             .          
+j6        -INF             .            +INF             .          
 
 ---- VAR sss  
 
           LOWER          LEVEL          UPPER         MARGINAL
 
-i1        -INF            8.9150        +INF             .          
-i2        -INF           18.8571        +INF             .          
-i3        -INF          -10.9418        +INF             .          
+i1        -INF            4.6415        +INF             .          
+i2        -INF           13.6914        +INF             .          
+i3        -INF           -7.8970        +INF             .          
 
 ---- VAR x  
 
           LOWER          LEVEL          UPPER         MARGINAL
 
-j1          .              .            +INF            8.9859      
-j2          .             0.2966        +INF            EPS         
-j3          .             0.2949        +INF             .          
-j4          .              .            +INF            1.8092      
-j5          .             1.5617        +INF             .          
-j6          .             0.0418        +INF            EPS         
+j1          .              .            +INF           98.0841      
+j2          .             0.1777        +INF             .          
+j3          .             0.1350        +INF      -5.220432E-9      
+j4          .              .            +INF           71.8538      
+j5          .             1.2813        +INF             .          
+j6          .              .            +INF          417.2228      
 
 
 **** REPORT SUMMARY :        0     NONOPT
                              0 INFEASIBLE
                              0  UNBOUNDED
                              0     ERRORS
+GAMS 25.1.1  r66732 Released May 19, 2018 DEX-DEG x86 64bit/Mac OS X - 07/02/18 16:44:35 Page 6
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+E x e c u t i o n
 
 
-EXECUTION TIME       =        0.001 SECONDS      2 MB  25.1.1 r66732 DEX-DEG
+----     84 EQUATION sssDef.M  
+
+i1  4.722,    i2  2.822,    i3 19.645
+
+
+----     84 EQUATION tttDef.M  
+
+j1  20.161,    j2  -4.963,    j3  -3.119,    j4  18.261,    j5   1.438,    j6 103.464
+
+
+
+EXECUTION TIME       =        0.000 SECONDS      3 MB  25.1.1 r66732 DEX-DEG
 
 
 USER: Chintan Bhomia, Single User License            G180612/0001CN-GEN
@@ -367,3 +381,4 @@ USER: Chintan Bhomia, Single User License            G180612/0001CN-GEN
 
 Input      /Users/cbhomia/Documents/GitHub/KKT/codes/nlpExample.gms
 Output     /Users/cbhomia/Documents/GitHub/KKT/codes/nlpExample.lst
+Save       /Users/cbhomia/Documents/GitHub/KKT/codes/aaa.g0?
