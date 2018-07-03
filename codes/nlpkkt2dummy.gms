@@ -28,9 +28,8 @@ dLdsss(i).. sss(i)-s0(i) - p(i) - r2$(i2(i))=n=0;
 * r2 is active only for the equations where i2 is part of i
 
 
-dLdx(j).. c(j) + 4*q(j) + q(j-1)- [r1*exp(x(j)-1)]$j2(j) - (s1*5)$(ord(j)=1) - (s1*6)$(ord(j)<>1)  =n= 0;
-*exp over set j2. hence the differentiation term is over j2 as well
-*dLdx(j).. r1 + r2 + s1 =n= 0;   x.fx(j) = x.l(j);
+dLdx(j).. r1 + r2 + s1 =n= 0;   x.fx(j) = x.l(j);
+
 
 
 model nlpkkt / dLdttt.ttt , dLdsss.sss, dLdx.x, sssdef.p , tttdef.q,  esum.r1, ssum.r2, allbnd.s1 / ;
