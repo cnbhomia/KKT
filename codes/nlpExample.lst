@@ -1,4 +1,4 @@
-GAMS 25.1.1  r66732 Released May 19, 2018 DEX-DEG x86 64bit/Mac OS X - 07/03/18 18:38:17 Page 1
+GAMS 25.1.1  r66732 Released May 19, 2018 DEX-DEG x86 64bit/Mac OS X - 07/09/18 15:38:28 Page 1
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 C o m p i l a t i o n
 
@@ -87,8 +87,8 @@ C o m p i l a t i o n
   84  display sssdef.m , tttdef.m;
 
 
-COMPILATION TIME     =        0.000 SECONDS      3 MB  25.1.1 r66732 DEX-DEG
-GAMS 25.1.1  r66732 Released May 19, 2018 DEX-DEG x86 64bit/Mac OS X - 07/03/18 18:38:17 Page 2
+COMPILATION TIME     =        0.001 SECONDS      3 MB  25.1.1 r66732 DEX-DEG
+GAMS 25.1.1  r66732 Released May 19, 2018 DEX-DEG x86 64bit/Mac OS X - 07/09/18 15:38:28 Page 2
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Equation Listing    SOLVE m Using NLP From line 83
 
@@ -136,7 +136,7 @@ sSum..  sss(i1) + sss(i2) =G= -100 ; (LHS = 0)
 
 allBnd..  ttt(j1) + ttt(j2) + ttt(j3) + ttt(j4) + ttt(j5) + ttt(j6) + sss(i1) + sss(i2) + sss(i3) + x(j1) + x(j2) + x(j3) + x(j4) + x(j5) + x(j6) =L= 20 ; (LHS = 0)
      
-GAMS 25.1.1  r66732 Released May 19, 2018 DEX-DEG x86 64bit/Mac OS X - 07/03/18 18:38:17 Page 3
+GAMS 25.1.1  r66732 Released May 19, 2018 DEX-DEG x86 64bit/Mac OS X - 07/09/18 15:38:28 Page 3
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Column Listing      SOLVE m Using NLP From line 83
 
@@ -220,7 +220,7 @@ x(j3)
         1       allBnd
 
 REMAINING 3 ENTRIES SKIPPED
-GAMS 25.1.1  r66732 Released May 19, 2018 DEX-DEG x86 64bit/Mac OS X - 07/03/18 18:38:17 Page 4
+GAMS 25.1.1  r66732 Released May 19, 2018 DEX-DEG x86 64bit/Mac OS X - 07/09/18 15:38:28 Page 4
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Model Statistics    SOLVE m Using NLP From line 83
 
@@ -234,11 +234,11 @@ DERIVATIVE POOL              20     CONSTANT POOL              19
 CODE LENGTH                  30
 
 
-GENERATION TIME      =        0.002 SECONDS      4 MB  25.1.1 r66732 DEX-DEG
+GENERATION TIME      =        0.001 SECONDS      4 MB  25.1.1 r66732 DEX-DEG
 
 
-EXECUTION TIME       =        0.002 SECONDS      4 MB  25.1.1 r66732 DEX-DEG
-GAMS 25.1.1  r66732 Released May 19, 2018 DEX-DEG x86 64bit/Mac OS X - 07/03/18 18:38:17 Page 5
+EXECUTION TIME       =        0.001 SECONDS      4 MB  25.1.1 r66732 DEX-DEG
+GAMS 25.1.1  r66732 Released May 19, 2018 DEX-DEG x86 64bit/Mac OS X - 07/09/18 15:38:28 Page 5
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Solution Report     SOLVE m Using NLP From line 83
 
@@ -253,7 +253,7 @@ Solution Report     SOLVE m Using NLP From line 83
 **** MODEL STATUS      2 Locally Optimal           
 **** OBJECTIVE VALUE               75.4112
 
- RESOURCE USAGE, LIMIT          0.009      1000.000
+ RESOURCE USAGE, LIMIT          0.001      1000.000
  ITERATION COUNT, LIMIT        12    2000000000
  EVALUATION ERRORS              0             0
 CONOPT 3         25.1.1 r66732 Released May 19, 2018 DEG x86 64bit/Mac OS X   
@@ -278,7 +278,7 @@ CONOPT 3         25.1.1 r66732 Released May 19, 2018 DEG x86 64bit/Mac OS X
  ** Optimal solution. Reduced gradient less than tolerance.
  
  
- CONOPT time Total                            0.008 seconds
+ CONOPT time Total                            0.001 seconds
    of which: Function evaluations             0.000 =  0.0%
              1st Derivative evaluations       0.000 =  0.0%
              Directional 2nd Derivative       0.000 =  0.0%
@@ -354,7 +354,7 @@ j6          .              .            +INF          417.2228
                              0 INFEASIBLE
                              0  UNBOUNDED
                              0     ERRORS
-GAMS 25.1.1  r66732 Released May 19, 2018 DEX-DEG x86 64bit/Mac OS X - 07/03/18 18:38:17 Page 6
+GAMS 25.1.1  r66732 Released May 19, 2018 DEX-DEG x86 64bit/Mac OS X - 07/09/18 15:38:28 Page 6
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 E x e c u t i o n
 

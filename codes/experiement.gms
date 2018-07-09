@@ -18,9 +18,5 @@ parameter
     j6  66
     /
     r /1/;
-display j, j2 , c , c2;
 
-scalar z;
-z =  sum(j2(j),c(j-1))$j2(j);
-display z;
-
+display ord(c)

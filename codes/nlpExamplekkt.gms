@@ -20,22 +20,30 @@ r1.l = esum.m;
 r2.l = ssum.m;
 s1.l = allbnd.m;
 
-*dLdttt(j)..  37 =n= 0;ttt.fx(j)=ttt.l(j);
+*dLdttt(j)..  37 =n= 0;          ttt.fx(j)=ttt.l(j);
 
 dLdttt(j).. sum(i,p(i)*A(i,j)) - q(j) - s1 =n= 0;
 
-dLdsss(i).. sss(i)-s0(i) - p(i) - r2$(i2(i))=n=0;
+dLdsss(i).. 2*(sss(i)-s0(i)) - p(i) - r2$(i2(i)) -s1=n=0;
+
+*dLdttt(j)..   37 +sum(i,p(i)) +r2 =n= 0;             ttt.fx(j)=ttt.l(j);
+*dLdsss(i).. 37 +r2=n= 0;               sss.fx(i) = sss.l(i);
+
+
 * r2 is active only for the equations where i2 is part of i
 
-
-dLdx(j).. c(j) + 4*q(j) + q(j-1)- [r1*exp(x(j)-1)]$j2(j) - (s1) =n= 0;
+dLdx(j).. c(j) + 4*q(j) + q(j-1)- [r1*exp(x(j)-1)]$j2(j) - s1 =n= 0;
+*dLdx(j).. c(j) + 4*q(j) + q(j-1)- [r1*exp(x(j)-1)]$j2(j) - (5*s1)$(ord(j) =1) -(6*s1)$(ord(j)<>1) -s1*(sum((i),4*A(i,j) + A(i,j-1))) =n= 0;
 *exp over set j2. hence the differentiation term is over j2 as well
-*dLdx(j).. r1 + r2 + s1 =n= 0;   x.fx(j) = x.l(j);
+*dLdx(j).. r1 + r2 + s1 +q(j) =n= 0;   x.fx(j) = x.l(j);
 
 
 model nlpkkt / dLdttt.ttt , dLdsss.sss, dLdx.x, sssdef.p , tttdef.q,  esum.r1, ssum.r2, allbnd.s1 / ;
+
+
+
 *model nlpkkt / dLdttt.ttt , dLdsss.sss, dLdx.x , dLdr1.r1, dLdr2.r2, dLds1.s1 / ;
-*nlpkkt.iterlim=20;
+nlpkkt.iterlim=0;
 solve nlpkkt using MCP;
 
 abort $(nlpkkt.objval >1e-5) 'We should start at a solution';
