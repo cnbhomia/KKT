@@ -1,4 +1,4 @@
-GAMS 25.1.1  r66732 Released May 19, 2018 DEX-DEG x86 64bit/Mac OS X - 07/02/18 16:20:56 Page 6
+GAMS 25.1.1  r66732 Released May 19, 2018 DEX-DEG x86 64bit/Mac OS X - 07/17/18 15:44:08 Page 6
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 C o m p i l a t i o n
 
@@ -23,10 +23,20 @@ C o m p i l a t i o n
   46  solve kkt using MCP;
   47   
   48  abort $(kkt.objval >1e-5) 'We should start at a solution';
+  49   
+  50   
+  51  file factors /factors_kkt.txt/
+  52   
+  53  put factors;
+  54   
+  55  put 'Maximum Revenue, R', R.l /
+  56      'Man hours, h', h.l/
+  57      'Tons of raw material, s',s.l /
+  58      ;
 
 
-COMPILATION TIME     =        0.001 SECONDS      2 MB  25.1.1 r66732 DEX-DEG
-GAMS 25.1.1  r66732 Released May 19, 2018 DEX-DEG x86 64bit/Mac OS X - 07/02/18 16:20:56 Page 7
+COMPILATION TIME     =        0.000 SECONDS      2 MB  25.1.1 r66732 DEX-DEG
+GAMS 25.1.1  r66732 Released May 19, 2018 DEX-DEG x86 64bit/Mac OS X - 07/17/18 15:44:08 Page 7
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Equation Listing    SOLVE kkt Using MCP From line 46
 
@@ -45,7 +55,7 @@ dLds..  - (0.440765934563863)*h + (7.49302088758567)*s - 170*con1_m =N= 0 ; (LHS
 
 con1..  20*h + 170*s =L= 20000 ; (LHS = 20000)
      
-GAMS 25.1.1  r66732 Released May 19, 2018 DEX-DEG x86 64bit/Mac OS X - 07/02/18 16:20:56 Page 8
+GAMS 25.1.1  r66732 Released May 19, 2018 DEX-DEG x86 64bit/Mac OS X - 07/17/18 15:44:08 Page 8
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Column Listing      SOLVE kkt Using MCP From line 46
 
@@ -75,7 +85,7 @@ con1_m
       -20       dLdh
      -170       dLds
 
-GAMS 25.1.1  r66732 Released May 19, 2018 DEX-DEG x86 64bit/Mac OS X - 07/02/18 16:20:56 Page 9
+GAMS 25.1.1  r66732 Released May 19, 2018 DEX-DEG x86 64bit/Mac OS X - 07/17/18 15:44:08 Page 9
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Model Statistics    SOLVE kkt Using MCP From line 46
 
@@ -89,11 +99,11 @@ DERIVATIVE POOL              20     CONSTANT POOL              21
 CODE LENGTH                  25
 
 
-GENERATION TIME      =        0.003 SECONDS      3 MB  25.1.1 r66732 DEX-DEG
+GENERATION TIME      =        0.005 SECONDS      3 MB  25.1.1 r66732 DEX-DEG
 
 
-EXECUTION TIME       =        0.004 SECONDS      3 MB  25.1.1 r66732 DEX-DEG
-GAMS 25.1.1  r66732 Released May 19, 2018 DEX-DEG x86 64bit/Mac OS X - 07/02/18 16:20:56 Page 10
+EXECUTION TIME       =        0.005 SECONDS      3 MB  25.1.1 r66732 DEX-DEG
+GAMS 25.1.1  r66732 Released May 19, 2018 DEX-DEG x86 64bit/Mac OS X - 07/17/18 15:44:08 Page 10
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Solution Report     SOLVE kkt Using MCP From line 46
 
@@ -107,7 +117,7 @@ Solution Report     SOLVE kkt Using MCP From line 46
 **** SOLVER STATUS     1 Normal Completion         
 **** MODEL STATUS      1 Optimal                   
 
- RESOURCE USAGE, LIMIT          0.004      1000.000
+ RESOURCE USAGE, LIMIT          0.009      1000.000
  ITERATION COUNT, LIMIT         0             0
  EVALUATION ERRORS              0             0
 2 row/cols, 3 non-zeros, 75.00% dense.
@@ -150,12 +160,17 @@ Two-Norm of Grad Fischer Fcn. .  0.0000e+00
                              0  UNBOUNDED
                              0  REDEFINED
                              0     ERRORS
-GAMS 25.1.1  r66732 Released May 19, 2018 DEX-DEG x86 64bit/Mac OS X - 07/02/18 16:20:56 Page 11
+GAMS 25.1.1  r66732 Released May 19, 2018 DEX-DEG x86 64bit/Mac OS X - 07/17/18 15:44:08 Page 11
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 E x e c u t i o n
 
 
-EXECUTION TIME       =        0.000 SECONDS      3 MB  25.1.1 r66732 DEX-DEG
+**** REPORT FILE SUMMARY
+
+factors /Users/cbhomia/Documents/GitHub/KKT/codes/factors_kkt.txt
+
+
+EXECUTION TIME       =        0.001 SECONDS      3 MB  25.1.1 r66732 DEX-DEG
 
 
 USER: Chintan Bhomia, Single User License            G180612/0001CN-GEN

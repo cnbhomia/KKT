@@ -121,11 +121,11 @@ cost of raw material = \$ 170 / tonn
 \end{aligned}
 \end{equation}
 
-The GAMS program below gives the optimum value of revenue R at $h = 666.67 , s = 38.21$.
+The GAMS program below gives the optimum values of \lstinputlisting{codes/factors.txt}
 
 \lstinputlisting {codes/sd_nlp.gms}
 
-\noindent The above model can we written in form of an MCP, by explicitly adding the KKT conditions to the model. For the given system, the KKT conditions are given as
+\noindent The above model is then written in form of an MCP, by explicitly adding the KKT conditions to the model. For the given system, the KKT conditions are given as
 
 \begin{equation}
 \begin{aligned}
@@ -136,10 +136,11 @@ The GAMS program below gives the optimum value of revenue R at $h = 666.67 , s =
 \end{aligned}
 \end{equation}
 
-\noindent The third KKT equation is the inequality budget constraint itself. The above equations are solved as an MCP model as shown below.
+\noindent The third KKT equation is the inequality budget constraint itself. The above equations are solved as an MCP model as shown below using the results saved in the initial run. Execution of the model with KKT conditions provide the values of decision variables given by
 
-\lstinputlisting{codes/sd_kkteq.gms}
+\lstinputlisting{codes/factors_kkt.txt}
 
+Clearly, the results do not 
 
 \end{document}
 
