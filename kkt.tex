@@ -159,4 +159,29 @@ Writing dummy condition, as straightforward as it may seem requires consideratio
 
 Thus, all variables representing the marginals of NLP constraints can be incorporated in any one of the dummy equation. This equation should be replaced by KKT condition at the very end. However, in the current case, variable 'con1\_m' , representing marginal of constraint 'con1' from NLP formulation is part of both the KKT conditions. Thus, though incorporated in equation dLds , the order of replacing the dummy equation with KKT condition is irrelevant in the given case, but can be better understood in the example described in subsequent section
 
+
+\section{KKT Development for complex systems}
+
+In this section, we implement the proposed methodology and learnings from previous example to solve a more complex NLP problem as MCP. The NLP example has been designed as a minimization model, which helps maintaining the sign convention. The complexity applies the methodology over range of equations and contains leads/lags in the formulation. The NLP Model and the output is given below.
+
+\lstinputlisting{codes/EX2.gms}
+
+
+\begin{tabular}{l}
+
+\begin{tabular}{l} \\
+ \\
+\begin{tabular}{l} \\ \\
+ \\ \\
+\lstinputlisting{codes/EX2.xlsx} \\ \\ \\ \\
+ \\ \\
+\end{tabular} \\ \\
+ \\
+\end{tabular} \\
+
+\end{tabular}
+
+
+
+
 \end{document}
