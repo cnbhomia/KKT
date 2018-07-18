@@ -7,7 +7,7 @@ Equations
     ;
 
 con1_m.l=con1.m;
-dLdh.. - 200*(2/3) * ([h**(2/3)]/h)  * s**(1/3) - con1_m*(20) =n=0;
+dLdh.. - 200*(2/3) * ([h**(2/3)]/h)  * s**(1/3) - con1_m*(200) =n=0;
 dLds.. - 200 * h**(2/3) * (1/3)*s**(-2/3) - con1_m*(170) =n=0;
 
 model kkt /dLdh.h,dLds.s,con1.con1_m/;

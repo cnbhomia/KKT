@@ -1,4 +1,4 @@
-GAMS 25.1.1  r66732 Released May 19, 2018 DEX-DEG x86 64bit/Mac OS X - 07/17/18 15:44:04 Page 1
+GAMS 25.1.1  r66732 Released May 19, 2018 WEX-WEI x86 64bit/MS Windows - 07/18/18 09:57:53 Page 1
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 C o m p i l a t i o n
 
@@ -31,8 +31,8 @@ C o m p i l a t i o n
   28   
 
 
-COMPILATION TIME     =        0.000 SECONDS      2 MB  25.1.1 r66732 DEX-DEG
-GAMS 25.1.1  r66732 Released May 19, 2018 DEX-DEG x86 64bit/Mac OS X - 07/17/18 15:44:04 Page 2
+COMPILATION TIME     =        0.015 SECONDS      2 MB  25.1.1 r66732 WEX-WEI
+GAMS 25.1.1  r66732 Released May 19, 2018 WEX-WEI x86 64bit/MS Windows - 07/18/18 09:57:53 Page 2
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Equation Listing    SOLVE khan Using NLP From line 27
 
@@ -46,7 +46,7 @@ con1..  20*h + 170*s =L= 20000 ; (LHS = 1900)
 
 obj..  (133.333333333333)*h + (66.6666666666667)*s + R =E= 0 ; (LHS = 2000, INFES = 2000 ****)
      
-GAMS 25.1.1  r66732 Released May 19, 2018 DEX-DEG x86 64bit/Mac OS X - 07/17/18 15:44:04 Page 3
+GAMS 25.1.1  r66732 Released May 19, 2018 WEX-WEI x86 64bit/MS Windows - 07/18/18 09:57:53 Page 3
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Column Listing      SOLVE khan Using NLP From line 27
 
@@ -73,7 +73,7 @@ R
                 (.LO, .L, .UP, .M = -INF, 0, +INF, 0)
         1       obj
 
-GAMS 25.1.1  r66732 Released May 19, 2018 DEX-DEG x86 64bit/Mac OS X - 07/17/18 15:44:04 Page 4
+GAMS 25.1.1  r66732 Released May 19, 2018 WEX-WEI x86 64bit/MS Windows - 07/18/18 09:57:53 Page 4
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Model Statistics    SOLVE khan Using NLP From line 27
 
@@ -87,11 +87,11 @@ DERIVATIVE POOL              20     CONSTANT POOL              19
 CODE LENGTH                  11
 
 
-GENERATION TIME      =        0.002 SECONDS      3 MB  25.1.1 r66732 DEX-DEG
+GENERATION TIME      =        0.016 SECONDS      3 MB  25.1.1 r66732 WEX-WEI
 
 
-EXECUTION TIME       =        0.002 SECONDS      3 MB  25.1.1 r66732 DEX-DEG
-GAMS 25.1.1  r66732 Released May 19, 2018 DEX-DEG x86 64bit/Mac OS X - 07/17/18 15:44:04 Page 5
+EXECUTION TIME       =        0.016 SECONDS      3 MB  25.1.1 r66732 WEX-WEI
+GAMS 25.1.1  r66732 Released May 19, 2018 WEX-WEI x86 64bit/MS Windows - 07/18/18 09:57:53 Page 5
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Solution Report     SOLVE khan Using NLP From line 27
 
@@ -106,10 +106,10 @@ Solution Report     SOLVE khan Using NLP From line 27
 **** MODEL STATUS      2 Locally Optimal           
 **** OBJECTIVE VALUE           -51854.8158
 
- RESOURCE USAGE, LIMIT          0.011      1000.000
+ RESOURCE USAGE, LIMIT          0.031      1000.000
  ITERATION COUNT, LIMIT        10    2000000000
  EVALUATION ERRORS              0             0
-CONOPT 3         25.1.1 r66732 Released May 19, 2018 DEG x86 64bit/Mac OS X   
+CONOPT 3         25.1.1 r66732 Released May 19, 2018 WEI x86 64bit/MS Windows 
  
  
     C O N O P T 3   version 3.17I
@@ -130,8 +130,8 @@ CONOPT 3         25.1.1 r66732 Released May 19, 2018 DEG x86 64bit/Mac OS X
  ** Optimal solution. Reduced gradient less than tolerance.
  
  
- CONOPT time Total                            0.009 seconds
-   of which: Function evaluations             0.001 = 11.1%
+ CONOPT time Total                            0.025 seconds
+   of which: Function evaluations             0.000 =  0.0%
              1st Derivative evaluations       0.000 =  0.0%
              Directional 2nd Derivative       0.000 =  0.0%
  
@@ -161,7 +161,7 @@ CONOPT 3         25.1.1 r66732 Released May 19, 2018 DEG x86 64bit/Mac OS X
                              0     ERRORS
 
 
-EXECUTION TIME       =        0.001 SECONDS      2 MB  25.1.1 r66732 DEX-DEG
+EXECUTION TIME       =        0.000 SECONDS      2 MB  25.1.1 r66732 WEX-WEI
 
 
 USER: Chintan Bhomia, Single User License            G180612/0001CN-GEN
@@ -170,6 +170,6 @@ USER: Chintan Bhomia, Single User License            G180612/0001CN-GEN
 
 **** FILE SUMMARY
 
-Input      /Users/cbhomia/Documents/GitHub/KKT/codes/sd_nlp.gms
-Output     /Users/cbhomia/Documents/GitHub/KKT/codes/sd_nlp.lst
-Save       /Users/cbhomia/Documents/GitHub/KKT/codes/aaa.g0?
+Input      C:\Users\cnbho\Documents\GitHub\KKT\codes\sd_nlp.gms
+Output     C:\Users\cnbho\Documents\GitHub\KKT\codes\sd_nlp.lst
+Save       C:\Users\cnbho\Documents\GitHub\KKT\codes\aaa.g0?
