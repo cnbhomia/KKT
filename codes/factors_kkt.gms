@@ -7,16 +7,16 @@ Equations
     ;
 
 con1_m.l=con1.m;
-dLdh.. - 200*(2/3) * ([h**(2/3)]/h)  * s**(1/3) - con1_m*(20) =n=0;
+dLdh.. - 200*(2/3) * ([h**(2/3)]/h)  * s**(1/3) - con1_m*(200) =n=0;
 dLds.. - 200 * h**(2/3) * (1/3)*s**(-2/3) - con1_m*(170) =n=0;
 
-*dLdh.. 37 =n=0 ; h.fx=h.L;
-*dLds.. 37 + con1_m=n=0;             s.fx=s.L;
+dLdh.. 37 =n=0 ; h.fx=h.L;
+dLds.. 37 =n=0;             s.fx=s.L;
 model kkt /dLdh.h,dLds.s,con1.con1_m/;
-kkt.iterlim=0;
+kkt.iterlim=30;
 solve kkt using MCP;
 
-abort $(kkt.objval >1e-5) 'We should start at a solution';
+*abort $(kkt.objval >1e-5) 'We should start at a solution';
 
 
 file factors /factors_kkt.txt/
