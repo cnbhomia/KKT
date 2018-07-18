@@ -1,0 +1,350 @@
+GAMS 25.1.1  r66732 Released May 19, 2018 WEX-WEI x86 64bit/MS Windows - 07/18/18 14:46:00 Page 1
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+C o m p i l a t i o n
+
+
+   1  sets
+   2    j     'set j'           / j1 * j6 /
+   3    j2(j) 'subset for j'    / j2, j4*j6 /
+   4    i     'set i'           / i1 * i3 /
+   5    i2(i) 'subset for i'    / i1, i2 /
+   6    ;
+   7  scalar
+   8    eMin / 2.5 /
+   9    sLow / -100 /
+  10    vMax / 20 /
+  11    ;
+  12  parameter
+  13    c(j) /
+  14      j1   2
+  15      j2  -2
+  16      j3   2
+  17      j4  -2
+  18      j5   2
+  19      j6  -2
+  20    /
+  21    s0(i) /
+  22      i1    10
+  23      i2    20
+  24      i3   -10
+  25    /
+  26    ;
+  27  table A(i,j)
+  28      j1    j2    j3    j4    j5    j6
+  29  i1   1     4     2                 2
+  30  i2               4     1     2
+  31  i3        -2    -2           -1    4   ;
+  32   
+  33  variable
+  34    z         'objective var'
+  35    varJ(j)   'variable over set j'
+  36    varI(i)   'variable over set i'
+  37    ;
+  38  positive variable
+  39    x(j)     'positive variable over set j'
+  40    ;
+  41  equation
+  42    objDef
+  43    eqvarI(i)
+  44    eqvarJ(j)
+  45    eSum
+  46    sSum
+  47    allBnd
+  48    ;
+  49   
+  50  objDef.. sum{j, c(j)*x(j)} + sum{i, sqr(varI(i)-s0(i))} =E= z;
+  51  eqvarI(i).. varI(i) =E= sum{j, A(i,j) * varJ(j)};
+  52  eqvarJ(j).. varJ(j) =E= 4*x(j) + x(j+1);
+  53  eSum..      sum{j2(j), exp(x(j)-1)} - eMin =G= 0;
+  54  sSum..      sum{i2(i), varI(i)} - sLow =G= 0;
+  55  allBnd..    sum{j, x(j) + varJ(j)} + sum{i, varI(i)} -vMax =L= 0;
+  56   
+  57  model nonlinear 'NLP model' / all /;
+  58  solve nonlinear using nlp min z;
+GAMS 25.1.1  r66732 Released May 19, 2018 WEX-WEI x86 64bit/MS Windows - 07/18/18 14:46:00 Page 2
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Include File Summary
+
+
+   SEQ   GLOBAL TYPE      PARENT   LOCAL  FILENAME
+
+     1        1 INPUT          0       0  C:\Users\cnbho\Documents\GitHub\KKT\codes\EX2.gms
+     2       59 GDXOUT         1      59  C:\Users\cnbho\Documents\GitHub\KKT\codes\EX2.gdx
+
+
+COMPILATION TIME     =        0.000 SECONDS      3 MB  25.1.1 r66732 WEX-WEI
+GAMS 25.1.1  r66732 Released May 19, 2018 WEX-WEI x86 64bit/MS Windows - 07/18/18 14:46:00 Page 3
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Equation Listing    SOLVE nonlinear Using NLP From line 58
+
+
+---- objDef  =E=  
+
+objDef..  - z - (20)*varI(i1) - (40)*varI(i2) + (20)*varI(i3) + 2*x(j1) - 2*x(j2) + 2*x(j3) - 2*x(j4) + 2*x(j5) - 2*x(j6) =E= 0 ; (LHS = 600, INFES = 600 ****)
+     
+
+---- eqvarI  =E=  
+
+eqvarI(i1)..  - varJ(j1) - 4*varJ(j2) - 2*varJ(j3) - 2*varJ(j6) + varI(i1) =E= 0 ; (LHS = 0)
+     
+eqvarI(i2)..  - 4*varJ(j3) - varJ(j4) - 2*varJ(j5) + varI(i2) =E= 0 ; (LHS = 0)
+     
+eqvarI(i3)..  2*varJ(j2) + 2*varJ(j3) + varJ(j5) - 4*varJ(j6) + varI(i3) =E= 0 ; (LHS = 0)
+     
+
+---- eqvarJ  =E=  
+
+eqvarJ(j1)..  varJ(j1) - 4*x(j1) - x(j2) =E= 0 ; (LHS = 0)
+     
+eqvarJ(j2)..  varJ(j2) - 4*x(j2) - x(j3) =E= 0 ; (LHS = 0)
+     
+eqvarJ(j3)..  varJ(j3) - 4*x(j3) - x(j4) =E= 0 ; (LHS = 0)
+     
+REMAINING 3 ENTRIES SKIPPED
+
+
+---- eSum  =G=  
+
+eSum..  (0.367879441171442)*x(j2) + (0.367879441171442)*x(j4) + (0.367879441171442)*x(j5) + (0.367879441171442)*x(j6) =G= 2.5 ; (LHS = 1.47151776468577, INFES = 1.02848223531423 ****)
+     
+
+---- sSum  =G=  
+
+sSum..  varI(i1) + varI(i2) =G= -100 ; (LHS = 0)
+     
+
+---- allBnd  =L=  
+
+allBnd..  varJ(j1) + varJ(j2) + varJ(j3) + varJ(j4) + varJ(j5) + varJ(j6) + varI(i1) + varI(i2) + varI(i3) + x(j1) + x(j2) + x(j3) + x(j4) + x(j5) + x(j6) =L= 20 ; (LHS = 0)
+     
+GAMS 25.1.1  r66732 Released May 19, 2018 WEX-WEI x86 64bit/MS Windows - 07/18/18 14:46:00 Page 4
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Column Listing      SOLVE nonlinear Using NLP From line 58
+
+
+---- z  objective var
+
+z
+                (.LO, .L, .UP, .M = -INF, 0, +INF, 0)
+       -1       objDef
+
+
+---- varJ  variable over set j
+
+varJ(j1)
+                (.LO, .L, .UP, .M = -INF, 0, +INF, 0)
+       -1       eqvarI(i1)
+        1       eqvarJ(j1)
+        1       allBnd
+
+varJ(j2)
+                (.LO, .L, .UP, .M = -INF, 0, +INF, 0)
+       -4       eqvarI(i1)
+        2       eqvarI(i3)
+        1       eqvarJ(j2)
+        1       allBnd
+
+varJ(j3)
+                (.LO, .L, .UP, .M = -INF, 0, +INF, 0)
+       -2       eqvarI(i1)
+       -4       eqvarI(i2)
+        2       eqvarI(i3)
+        1       eqvarJ(j3)
+        1       allBnd
+
+REMAINING 3 ENTRIES SKIPPED
+
+---- varI  variable over set i
+
+varI(i1)
+                (.LO, .L, .UP, .M = -INF, 0, +INF, 0)
+     (-20)      objDef
+        1       eqvarI(i1)
+        1       sSum
+        1       allBnd
+
+varI(i2)
+                (.LO, .L, .UP, .M = -INF, 0, +INF, 0)
+     (-40)      objDef
+        1       eqvarI(i2)
+        1       sSum
+        1       allBnd
+
+varI(i3)
+                (.LO, .L, .UP, .M = -INF, 0, +INF, 0)
+      (20)      objDef
+        1       eqvarI(i3)
+        1       allBnd
+
+
+---- x  positive variable over set j
+
+x(j1)
+                (.LO, .L, .UP, .M = 0, 0, +INF, 0)
+        2       objDef
+       -4       eqvarJ(j1)
+        1       allBnd
+
+x(j2)
+                (.LO, .L, .UP, .M = 0, 0, +INF, 0)
+       -2       objDef
+       -1       eqvarJ(j1)
+       -4       eqvarJ(j2)
+       (0.3679) eSum
+        1       allBnd
+
+x(j3)
+                (.LO, .L, .UP, .M = 0, 0, +INF, 0)
+        2       objDef
+       -1       eqvarJ(j2)
+       -4       eqvarJ(j3)
+        1       allBnd
+
+REMAINING 3 ENTRIES SKIPPED
+GAMS 25.1.1  r66732 Released May 19, 2018 WEX-WEI x86 64bit/MS Windows - 07/18/18 14:46:00 Page 5
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE nonlinear Using NLP From line 58
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           6     SINGLE EQUATIONS           13
+BLOCKS OF VARIABLES           4     SINGLE VARIABLES           16
+NON ZERO ELEMENTS            62     NON LINEAR N-Z              7
+DERIVATIVE POOL              20     CONSTANT POOL              19
+CODE LENGTH                  30
+
+
+GENERATION TIME      =        0.016 SECONDS      4 MB  25.1.1 r66732 WEX-WEI
+
+
+EXECUTION TIME       =        0.016 SECONDS      4 MB  25.1.1 r66732 WEX-WEI
+GAMS 25.1.1  r66732 Released May 19, 2018 WEX-WEI x86 64bit/MS Windows - 07/18/18 14:46:00 Page 6
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE nonlinear Using NLP From line 58
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   nonlinear           OBJECTIVE  z
+     TYPE    NLP                 DIRECTION  MINIMIZE
+     SOLVER  CONOPT              FROM LINE  58
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      2 Locally Optimal           
+**** OBJECTIVE VALUE               75.4112
+
+ RESOURCE USAGE, LIMIT          0.000      1000.000
+ ITERATION COUNT, LIMIT        12    2000000000
+ EVALUATION ERRORS              0             0
+CONOPT 3         25.1.1 r66732 Released May 19, 2018 WEI x86 64bit/MS Windows 
+ 
+ 
+    C O N O P T 3   version 3.17I
+    Copyright (C)   ARKI Consulting and Development A/S
+                    Bagsvaerdvej 246 A
+                    DK-2880 Bagsvaerd, Denmark
+ 
+ 
+    The model has 16 variables and 13 constraints
+    with 62 Jacobian elements, 7 of which are nonlinear.
+    The Hessian of the Lagrangian has 7 elements on the diagonal,
+    0 elements below the diagonal, and 7 nonlinear variables.
+ 
+                   Pre-triangular equations:   0
+                   Post-triangular equations:  1
+                   Definitional equations:     9
+ 
+ 
+ ** Optimal solution. Reduced gradient less than tolerance.
+ 
+ 
+ CONOPT time Total                            0.002 seconds
+   of which: Function evaluations             0.000 =  0.0%
+             1st Derivative evaluations       0.000 =  0.0%
+             Directional 2nd Derivative       0.000 =  0.0%
+ 
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- EQU objDef              .              .              .            -1.0000      
+
+---- EQU eqvarI  
+
+          LOWER          LEVEL          UPPER         MARGINAL
+
+i1          .              .              .             4.7221      
+i2          .              .              .             2.8220      
+i3          .              .              .            19.6452      
+
+---- EQU eqvarJ  
+
+          LOWER          LEVEL          UPPER         MARGINAL
+
+j1          .              .              .            20.1612      
+j2          .              .              .            -4.9627      
+j3          .              .              .            -3.1191      
+j4          .              .              .            18.2611      
+j5          .              .              .             1.4379      
+j6          .              .              .           103.4641      
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- EQU eSum               2.5000         2.5000        +INF           31.2889      
+---- EQU sSum            -100.0000        18.3329        +INF             .          
+---- EQU allBnd            -INF           20.0000        20.0000       -15.4391      
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- VAR z                 -INF           75.4112        +INF             .          
+
+  z  objective var
+
+---- VAR varJ  variable over set j
+
+          LOWER          LEVEL          UPPER         MARGINAL
+
+j1        -INF            0.1777        +INF             .          
+j2        -INF            0.8459        +INF             .          
+j3        -INF            0.5400        +INF             .          
+j4        -INF            1.2813        +INF             .          
+j5        -INF            5.1251        +INF             .          
+j6        -INF             .            +INF             .          
+
+---- VAR varI  variable over set i
+
+          LOWER          LEVEL          UPPER         MARGINAL
+
+i1        -INF            4.6415        +INF             .          
+i2        -INF           13.6914        +INF             .          
+i3        -INF           -7.8970        +INF             .          
+
+---- VAR x  positive variable over set j
+
+          LOWER          LEVEL          UPPER         MARGINAL
+
+j1          .              .            +INF           98.0841      
+j2          .             0.1777        +INF             .          
+j3          .             0.1350        +INF      -5.220459E-9      
+j4          .              .            +INF           71.8538      
+j5          .             1.2813        +INF             .          
+j6          .              .            +INF          417.2228      
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+                             0     ERRORS
+
+
+EXECUTION TIME       =        0.000 SECONDS      2 MB  25.1.1 r66732 WEX-WEI
+
+
+USER: Chintan Bhomia, Single User License            G180612/0001CN-GEN
+      GAMS Development, Fairfax                                 DC14199
+
+
+**** FILE SUMMARY
+
+Input      C:\Users\cnbho\Documents\GitHub\KKT\codes\EX2.gms
+Output     C:\Users\cnbho\Documents\GitHub\KKT\codes\EX2.lst

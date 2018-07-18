@@ -56,3 +56,6 @@ allBnd..    sum{j, x(j) + varJ(j)} + sum{i, varI(i)} -vMax =L= 0;
 
 model nonlinear 'NLP model' / all /;
 solve nonlinear using nlp min z;
+$gdxout EX2
+$unload varJ varI x 
+$gdxout
