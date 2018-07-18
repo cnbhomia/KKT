@@ -1,0 +1,45 @@
+GAMS 25.1.1  r66732 Released May 19, 2018 WEX-WEI x86 64bit/MS Windows - 07/18/18 15:51:52 Page 1
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+C o m p i l a t i o n
+
+
+   1  set i / i1*i3/;
+   2   
+   3  parameter c(i) / i1 1, i2 EPS /
+   4   
+   5  scalar s1,s2,s3 ;
+   6   
+   7  s1 = sum(i$c(i),1) ;
+   8  s2 = sum(i$(c(i)>0),1);
+   9  s3 = sum(i,1) ;
+  10   
+  11  display c , s1,s2,s3;
+
+
+COMPILATION TIME     =        0.000 SECONDS      3 MB  25.1.1 r66732 WEX-WEI
+GAMS 25.1.1  r66732 Released May 19, 2018 WEX-WEI x86 64bit/MS Windows - 07/18/18 15:51:52 Page 2
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+E x e c u t i o n
+
+
+----     11 PARAMETER c  
+
+i1 1.000,    i2   EPS
+
+
+----     11 PARAMETER s1                   =        2.000  
+            PARAMETER s2                   =        1.000  
+            PARAMETER s3                   =        3.000  
+
+
+EXECUTION TIME       =        0.015 SECONDS      4 MB  25.1.1 r66732 WEX-WEI
+
+
+USER: Chintan Bhomia, Single User License            G180612/0001CN-GEN
+      GAMS Development, Fairfax                                 DC14199
+
+
+**** FILE SUMMARY
+
+Input      C:\Users\cnbho\Documents\GitHub\KKT\codes\try.gms
+Output     C:\Users\cnbho\Documents\GitHub\KKT\codes\try.lst

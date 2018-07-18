@@ -1,4 +1,4 @@
-GAMS 25.1.1  r66732 Released May 19, 2018 WEX-WEI x86 64bit/MS Windows - 07/18/18 15:04:01 Page 1
+GAMS 25.1.1  r66732 Released May 19, 2018 WEX-WEI x86 64bit/MS Windows - 07/18/18 15:33:03 Page 1
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 C o m p i l a t i o n
 
@@ -62,15 +62,13 @@ C o m p i l a t i o n
   57  model nonlinear 'NLP model' / all /;
   58  solve nonlinear using nlp min z;
   59   
-  60  execute_unload "EX2.gdx" z varJ varI objDef eqvarJ eqvarI eSum sSum allBnd
+  60  execute_unload "EX2.gdx" z varJ varI objDef eqvarJ eqvarI eSum sSum allBnd;
   61   
-  62  execute 'gdx2xls EX2.gdx'
-  63   
-  64  *execute 'gdxxrw.exe EX2.gdx z varJ varI objDef eqvarJ eqvarI eSum sSum allBnd'
+  62  execute 'gdxxrw.exe EX2.gdx  o=EX2.xls var=z varJ varI objDef eqvarJ eqvarI eSum sSum allBnd'
 
 
 COMPILATION TIME     =        0.000 SECONDS      3 MB  25.1.1 r66732 WEX-WEI
-GAMS 25.1.1  r66732 Released May 19, 2018 WEX-WEI x86 64bit/MS Windows - 07/18/18 15:04:01 Page 2
+GAMS 25.1.1  r66732 Released May 19, 2018 WEX-WEI x86 64bit/MS Windows - 07/18/18 15:33:03 Page 2
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Equation Listing    SOLVE nonlinear Using NLP From line 58
 
@@ -114,7 +112,7 @@ sSum..  varI(i1) + varI(i2) =G= -100 ; (LHS = 0)
 
 allBnd..  varJ(j1) + varJ(j2) + varJ(j3) + varJ(j4) + varJ(j5) + varJ(j6) + varI(i1) + varI(i2) + varI(i3) + x(j1) + x(j2) + x(j3) + x(j4) + x(j5) + x(j6) =L= 20 ; (LHS = 0)
      
-GAMS 25.1.1  r66732 Released May 19, 2018 WEX-WEI x86 64bit/MS Windows - 07/18/18 15:04:01 Page 3
+GAMS 25.1.1  r66732 Released May 19, 2018 WEX-WEI x86 64bit/MS Windows - 07/18/18 15:33:03 Page 3
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Column Listing      SOLVE nonlinear Using NLP From line 58
 
@@ -198,7 +196,7 @@ x(j3)
         1       allBnd
 
 REMAINING 3 ENTRIES SKIPPED
-GAMS 25.1.1  r66732 Released May 19, 2018 WEX-WEI x86 64bit/MS Windows - 07/18/18 15:04:01 Page 4
+GAMS 25.1.1  r66732 Released May 19, 2018 WEX-WEI x86 64bit/MS Windows - 07/18/18 15:33:03 Page 4
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Model Statistics    SOLVE nonlinear Using NLP From line 58
 
@@ -212,11 +210,11 @@ DERIVATIVE POOL              20     CONSTANT POOL              19
 CODE LENGTH                  30
 
 
-GENERATION TIME      =        0.015 SECONDS      4 MB  25.1.1 r66732 WEX-WEI
+GENERATION TIME      =        0.000 SECONDS      4 MB  25.1.1 r66732 WEX-WEI
 
 
-EXECUTION TIME       =        0.015 SECONDS      4 MB  25.1.1 r66732 WEX-WEI
-GAMS 25.1.1  r66732 Released May 19, 2018 WEX-WEI x86 64bit/MS Windows - 07/18/18 15:04:01 Page 5
+EXECUTION TIME       =        0.000 SECONDS      4 MB  25.1.1 r66732 WEX-WEI
+GAMS 25.1.1  r66732 Released May 19, 2018 WEX-WEI x86 64bit/MS Windows - 07/18/18 15:33:03 Page 5
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Solution Report     SOLVE nonlinear Using NLP From line 58
 
@@ -257,7 +255,7 @@ CONOPT 3         25.1.1 r66732 Released May 19, 2018 WEI x86 64bit/MS Windows
  
  
  CONOPT time Total                            0.002 seconds
-   of which: Function evaluations             0.001 = 50.0%
+   of which: Function evaluations             0.000 =  0.0%
              1st Derivative evaluations       0.000 =  0.0%
              Directional 2nd Derivative       0.000 =  0.0%
  
@@ -332,12 +330,12 @@ j6          .              .            +INF          417.2228
                              0 INFEASIBLE
                              0  UNBOUNDED
                              0     ERRORS
-GAMS 25.1.1  r66732 Released May 19, 2018 WEX-WEI x86 64bit/MS Windows - 07/18/18 15:04:01 Page 6
+GAMS 25.1.1  r66732 Released May 19, 2018 WEX-WEI x86 64bit/MS Windows - 07/18/18 15:33:03 Page 6
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 E x e c u t i o n
 
 
-EXECUTION TIME       =        6.281 SECONDS      3 MB  25.1.1 r66732 WEX-WEI
+EXECUTION TIME       =        1.172 SECONDS      3 MB  25.1.1 r66732 WEX-WEI
 
 
 USER: Chintan Bhomia, Single User License            G180612/0001CN-GEN

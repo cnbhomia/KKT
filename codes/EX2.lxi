@@ -1,26 +1,26 @@
 B 2 C o m p i l a t i o n
-B 74 Equation Listing    SOLVE nonlinear Using NLP From line 58
-D 75 objDef
-D 81 eqvarI
-D 90 eqvarJ
-D 101 eSum
-D 106 sSum
-D 111 allBnd
-B 118 Column Listing      SOLVE nonlinear Using NLP From line 58
-E 119 z
-E 127 varJ
-E 152 varI
-E 175 x
-B 202 Model Statistics    SOLVE nonlinear Using NLP From line 58
-B 220 Solution Report     SOLVE nonlinear Using NLP From line 58
-F 266 objDef
-F 272 eqvarI
-F 280 eqvarJ
-F 289 eSum
-F 290 sSum
-F 291 allBnd
-G 292 z
-G 298 varJ
-G 309 varI
-G 317 x
-B 336 E x e c u t i o n
+B 72 Equation Listing    SOLVE nonlinear Using NLP From line 58
+D 73 objDef
+D 79 eqvarI
+D 88 eqvarJ
+D 99 eSum
+D 104 sSum
+D 109 allBnd
+B 116 Column Listing      SOLVE nonlinear Using NLP From line 58
+E 117 z
+E 125 varJ
+E 150 varI
+E 173 x
+B 200 Model Statistics    SOLVE nonlinear Using NLP From line 58
+B 218 Solution Report     SOLVE nonlinear Using NLP From line 58
+F 264 objDef
+F 270 eqvarI
+F 278 eqvarJ
+F 287 eSum
+F 288 sSum
+F 289 allBnd
+G 290 z
+G 296 varJ
+G 307 varI
+G 315 x
+B 334 E x e c u t i o n
