@@ -1,4 +1,4 @@
-GAMS 25.1.1  r66732 Released May 19, 2018 WEX-WEI x86 64bit/MS Windows 07/26/18 15:45:55 Page 1
+GAMS 25.1.1  r66732 Released May 19, 2018 WEX-WEI x86 64bit/MS Windows 07/26/18 15:39:43 Page 1
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 C o m p i l a t i o n
 
@@ -64,7 +64,7 @@ C o m p i l a t i o n
 
 
 COMPILATION TIME     =        0.000 SECONDS      3 MB  25.1.1 r66732 WEX-WEI
-GAMS 25.1.1  r66732 Released May 19, 2018 WEX-WEI x86 64bit/MS Windows 07/26/18 15:45:55 Page 2
+GAMS 25.1.1  r66732 Released May 19, 2018 WEX-WEI x86 64bit/MS Windows 07/26/18 15:39:43 Page 2
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Equation Listing    SOLVE nonlinear Using NLP From line 58
 
@@ -123,7 +123,7 @@ allBnd..  ttt(j1) + ttt(j2) + ttt(j3) + ttt(j4) + ttt(j5) + ttt(j6) + sss(i1)
       + sss(i2) + sss(i3) + x(j1) + x(j2) + x(j3) + x(j4) + x(j5) + x(j6) =L= 20
       ; (LHS = 0)
      
-GAMS 25.1.1  r66732 Released May 19, 2018 WEX-WEI x86 64bit/MS Windows 07/26/18 15:45:55 Page 3
+GAMS 25.1.1  r66732 Released May 19, 2018 WEX-WEI x86 64bit/MS Windows 07/26/18 15:39:43 Page 3
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Column Listing      SOLVE nonlinear Using NLP From line 58
 
@@ -207,7 +207,7 @@ x(j3)
         1       allBnd
 
 REMAINING 3 ENTRIES SKIPPED
-GAMS 25.1.1  r66732 Released May 19, 2018 WEX-WEI x86 64bit/MS Windows 07/26/18 15:45:55 Page 4
+GAMS 25.1.1  r66732 Released May 19, 2018 WEX-WEI x86 64bit/MS Windows 07/26/18 15:39:43 Page 4
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Model Statistics    SOLVE nonlinear Using NLP From line 58
 
@@ -221,11 +221,11 @@ DERIVATIVE POOL              20     CONSTANT POOL              19
 CODE LENGTH                  30
 
 
-GENERATION TIME      =        0.000 SECONDS      4 MB  25.1.1 r66732 WEX-WEI
+GENERATION TIME      =        0.016 SECONDS      4 MB  25.1.1 r66732 WEX-WEI
 
 
-EXECUTION TIME       =        0.000 SECONDS      4 MB  25.1.1 r66732 WEX-WEI
-GAMS 25.1.1  r66732 Released May 19, 2018 WEX-WEI x86 64bit/MS Windows 07/26/18 15:45:55 Page 5
+EXECUTION TIME       =        0.016 SECONDS      4 MB  25.1.1 r66732 WEX-WEI
+GAMS 25.1.1  r66732 Released May 19, 2018 WEX-WEI x86 64bit/MS Windows 07/26/18 15:39:43 Page 5
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Solution Report     SOLVE nonlinear Using NLP From line 58
 
@@ -240,7 +240,7 @@ Solution Report     SOLVE nonlinear Using NLP From line 58
 **** MODEL STATUS      2 Locally Optimal           
 **** OBJECTIVE VALUE               75.4112
 
- RESOURCE USAGE, LIMIT          0.016      1000.000
+ RESOURCE USAGE, LIMIT          0.031      1000.000
  ITERATION COUNT, LIMIT        12    2000000000
  EVALUATION ERRORS              0             0
 CONOPT 3         25.1.1 r66732 Released May 19, 2018 WEI x86 64bit/MS Windows 
@@ -265,8 +265,8 @@ CONOPT 3         25.1.1 r66732 Released May 19, 2018 WEI x86 64bit/MS Windows
  ** Optimal solution. Reduced gradient less than tolerance.
  
  
- CONOPT time Total                            0.006 seconds
-   of which: Function evaluations             0.000 =  0.0%
+ CONOPT time Total                            0.022 seconds
+   of which: Function evaluations             0.002 =  9.1%
              1st Derivative evaluations       0.000 =  0.0%
              Directional 2nd Derivative       0.000 =  0.0%
  
@@ -353,5 +353,5 @@ USER: Chintan Bhomia, Single User License            G180612/0001CN-GEN
 **** FILE SUMMARY
 
 Input      C:\Users\cnbho\Documents\GitHub\KKT\codes\EX2.gms
-Output     C:\Users\cnbho\Documents\GitHub\KKT\codes\EX2.lst
-Save       C:\Users\cnbho\Documents\GitHub\KKT\codes\xyz.g0?
+Output     C:\Users\cnbho\Documents\GitHub\KKT\EX2.lst
+Save       C:\Users\cnbho\Documents\GitHub\KKT\zxc.g0?

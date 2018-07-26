@@ -1,19 +1,25 @@
---- Job nlpkkt_alldummies.gms Start 07/26/18 14:55:32 25.1.1 r66732 WEX-WEI x86 64bit/MS Windows
+
+*** Issued ViewClose request on C:\Users\cnbho\Documents\GitHub\KKT\EX2KKT0.log
+*** Log reopend as output
+*** Open logfile error: (R=13) FN="C:\Users\cnbho\Documents\GitHub\KKT\EX2KKT0.log"
+*** Msg=Permission denied
+*** Logging to standard output
+--- Job EX2KKT0.gms Start 07/26/18 15:38:39 25.1.1 r66732 WEX-WEI x86 64bit/MS Windows
 GAMS 25.1.1   Copyright (C) 1987-2018 GAMS Development. All rights reserved
 Licensee: Chintan Bhomia, Single User License            G180612/0001CN-GEN
           GAMS Development, Fairfax                                 DC14199
           cbhomia@gams.com                                                 
 --- Starting continued compilation
 --- Workfile was generated under GAMS version WEX251-251
---- nlpkkt_alldummies.gms(36) 3 Mb
---- Starting execution: elapsed 0:00:00.010[LST:46]
---- nlpkkt_alldummies.gms(90) 4 Mb
---- Generating MCP model nlpkkt[LST:46]
---- nlpkkt_alldummies.gms(92) 6 Mb
+--- EX2KKT0.gms(37) 3 Mb
+--- Starting execution: elapsed 0:00:00.584
+--- EX2KKT0.gms(91) 4 Mb
+--- Generating MCP model nlpkkt
+--- EX2KKT0.gms(93) 6 Mb
 ---   21 rows  27 columns  79 non-zeroes
 ---   17 nl-code  4 nl-non-zeroes
---- nlpkkt_alldummies.gms(92) 4 Mb
---- Executing PATH: elapsed 0:00:00.017[LST:251]
+--- EX2KKT0.gms(93) 4 Mb
+--- Executing PATH: elapsed 0:00:00.599
 Reading dictionary...
 Reading row data...
 Evaluating functions...
@@ -53,9 +59,9 @@ Total Time. . . . . . . 0.000000
 Residual. . . . . . . . 1.342206e-10
 
 --- Restarting execution
---- nlpkkt_alldummies.gms(92) 2 Mb
---- Reading solution for model nlpkkt[LST:266]
---- Executing after solve: elapsed 0:00:00.105[LST:412]
---- nlpkkt_alldummies.gms(94) 3 Mb
-*** Status: Normal completion[LST:428]
---- Job nlpkkt_alldummies.gms Stop 07/26/18 14:55:32 elapsed 0:00:00.110
+--- EX2KKT0.gms(93) 2 Mb
+--- Reading solution for model nlpkkt
+--- Executing after solve: elapsed 0:00:00.782
+--- EX2KKT0.gms(95) 3 Mb
+*** Status: Normal completion
+--- Job EX2KKT0.gms Stop 07/26/18 15:38:40 elapsed 0:00:00.783

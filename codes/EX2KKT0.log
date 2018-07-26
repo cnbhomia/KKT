@@ -1,4 +1,5 @@
---- Job EX2KKT0.gms Start 07/26/18 14:59:04 25.1.1 r66732 WEX-WEI x86 64bit/MS Windows
+
+--- Job EX2KKT0.gms Start 07/26/18 15:46:49 25.1.1 r66732 WEX-WEI x86 64bit/MS Windows
 GAMS 25.1.1   Copyright (C) 1987-2018 GAMS Development. All rights reserved
 Licensee: Chintan Bhomia, Single User License            G180612/0001CN-GEN
           GAMS Development, Fairfax                                 DC14199
@@ -6,14 +7,14 @@ Licensee: Chintan Bhomia, Single User License            G180612/0001CN-GEN
 --- Starting continued compilation
 --- Workfile was generated under GAMS version WEX251-251
 --- EX2KKT0.gms(37) 3 Mb
---- Starting execution: elapsed 0:00:00.005[LST:47]
+--- Starting execution: elapsed 0:00:00.004
 --- EX2KKT0.gms(91) 4 Mb
---- Generating MCP model nlpkkt[LST:47]
+--- Generating MCP model nlpkkt
 --- EX2KKT0.gms(93) 6 Mb
 ---   21 rows  27 columns  79 non-zeroes
 ---   17 nl-code  4 nl-non-zeroes
 --- EX2KKT0.gms(93) 4 Mb
---- Executing PATH: elapsed 0:00:00.011[LST:252]
+--- Executing PATH: elapsed 0:00:00.011
 Reading dictionary...
 Reading row data...
 Evaluating functions...
@@ -49,13 +50,13 @@ Gradient Steps. . . . . 0
 Function Evaluations. . 1
 Gradient Evaluations. . 1
 Basis Time. . . . . . . 0.000000
-Total Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.016000
 Residual. . . . . . . . 1.342206e-10
 
 --- Restarting execution
 --- EX2KKT0.gms(93) 2 Mb
---- Reading solution for model nlpkkt[LST:267]
---- Executing after solve: elapsed 0:00:00.101[LST:413]
+--- Reading solution for model nlpkkt
+--- Executing after solve: elapsed 0:00:00.193
 --- EX2KKT0.gms(95) 3 Mb
-*** Status: Normal completion[LST:429]
---- Job EX2KKT0.gms Stop 07/26/18 14:59:05 elapsed 0:00:00.103
+*** Status: Normal completion
+--- Job EX2KKT0.gms Stop 07/26/18 15:46:49 elapsed 0:00:00.194

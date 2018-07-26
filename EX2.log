@@ -1,0 +1,48 @@
+
+--- Job EX2.gms Start 07/26/18 15:39:43 25.1.1 r66732 WEX-WEI x86 64bit/MS Windows
+GAMS 25.1.1   Copyright (C) 1987-2018 GAMS Development. All rights reserved
+Licensee: Chintan Bhomia, Single User License            G180612/0001CN-GEN
+          GAMS Development, Fairfax                                 DC14199
+          cbhomia@gams.com                                                 
+--- Starting compilation
+--- EX2.gms(58) 3 Mb
+--- Starting execution: elapsed 0:00:00.007
+--- Generating NLP model nonlinear
+--- EX2.gms(58) 6 Mb
+---   13 rows  16 columns  62 non-zeroes
+---   30 nl-code  7 nl-non-zeroes
+--- EX2.gms(58) 4 Mb
+--- Executing CONOPT: elapsed 0:00:00.015
+CONOPT 3         25.1.1 r66732 Released May 19, 2018 WEI x86 64bit/MS Windows 
+ 
+ 
+    C O N O P T 3   version 3.17I
+    Copyright (C)   ARKI Consulting and Development A/S
+                    Bagsvaerdvej 246 A
+                    DK-2880 Bagsvaerd, Denmark
+ 
+ 
+   Iter Phase Ninf   Infeasibility   RGmax    NSB   Step InItr MX OK
+      0   0        6.0102848224E+02 (Input point)
+ 
+                   Pre-triangular equations:   0
+                   Post-triangular equations:  1
+                   Definitional equations:     9
+ 
+      1   0        1.0284822353E+00 (After pre-processing)
+      2   0        5.1424111766E-01 (After scaling)
+ 
+ ** Feasible solution. Value of objective =    129.555994686
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+      6   3        7.7198697024E+01 6.5E+01     2 5.1E-02    2 F  T
+     11   4        7.5411234166E+01 3.1E-03     1 1.0E+00    1 F  T
+     12   4        7.5411234166E+01 5.2E-09     1
+ 
+ ** Optimal solution. Reduced gradient less than tolerance.
+ 
+--- Restarting execution
+--- EX2.gms(58) 2 Mb
+--- Reading solution for model nonlinear
+*** Status: Normal completion
+--- Job EX2.gms Stop 07/26/18 15:39:43 elapsed 0:00:00.150

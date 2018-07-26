@@ -1,3 +1,0 @@
-Maximum Revenue, R   -51854.82
-Man hours, h      166.67
-Tons of raw material, s       98.04
