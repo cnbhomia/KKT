@@ -1,45 +1,54 @@
-GAMS 25.1.1  r66732 Released May 19, 2018 WEX-WEI x86 64bit/MS Windows - 07/18/18 11:46:30 Page 6
+GAMS 25.1.1  r66732 Released May 19, 2018 WEX-WEI x86 64bit/MS Windows - 07/24/18 12:08:20 Page 1
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 C o m p i l a t i o n
 
 
-  29  variables
-  30      con1_m 'marginal value for con1' /up 0/
-  31      ;
-  32  Equations
-  33      dLdh 'gradL wrt h'
-  34      dLds 'gradL wrt s'
-  35      ;
-  36   
-  37  con1_m.l=con1.m;
-  38  *dLdh.. - 200*(2/3) * ([h**(2/3)]/h)  * s**(1/3) - con1_m*(200) =n=0;
-  39  *dLds.. - 200 * h**(2/3) * (1/3)*s**(-2/3) - con1_m*(170) =n=0;
-  40   
-  41  dLdh.. 37 =n=0 ; h.fx=h.L;
-  42  dLds.. 37 =n=0;             s.fx=s.L;
-  43  model kkt /dLdh.h,dLds.s,con1.con1_m/;
-  44  kkt.iterlim=30;
-  45  solve kkt using MCP;
-****                     $483
-**** LINE     17 INPUT       C:\Users\cnbho\Documents\GitHub\KKT\codes\factors_kkt.gms
-**** 483  Mapped variables have to appear in the model
-**** The following MCP errors were detected in model kkt:
-**** 483 con1_m no ref to var in equ.var
-  46   
-  47  *abort $(kkt.objval >1e-5) 'We should start at a solution';
-  48   
-  49   
-  50  file factors /factors_kkt.txt/
-  51  put factors;
-  52  put 'Maximum Revenue, R', R.l /
-  53      'Man hours, h', h.l/
-  54      'Tons of raw material, s',s.l /
-  55      ;
+   1  variables
+   2      con1_m 'marginal value for con1' /up 0/
+   3      ;
+   4  Equations
+   5      dLdh 'gradL wrt h'
+   6      dLds 'gradL wrt s'
+   7      ;
+   8   
+   9  con1_m.l=con1.m;
+****                $140
+**** 140  Unknown symbol
+  10  dLdh.. - 200*(2/3) * ([h**(2/3)]/h)  * s**(1/3) - con1_m*(200) =n=0;
+****                         $140            $140
+**** 140  Unknown symbol
+  11  dLds.. - 200 * h**(2/3) * (1/3)*s**(-2/3) - con1_m*(170) =n=0;
+  12   
+  13  dLdh.. 37 =n=0 ; h.fx=h.L;
+****     $150
+**** 150  Symbolic equations redefined
+  14  dLds.. 37 =n=0;             s.fx=s.L;
+****     $150
+**** 150  Symbolic equations redefined
+  15  model kkt /dLdh.h,dLds.s,con1.con1_m/;
+****                                     $142
+**** 142  No suffix allowed here - suffix ignored
+  16  kkt.iterlim=30;
+  17  solve kkt using MCP;
+****                     $257
+**** 257  Solve statement not checked because of previous errors
+  18   
+  19  *abort $(kkt.objval >1e-5) 'We should start at a solution';
+  20   
+  21   
+  22  file factors /factors_kkt.txt/
+  23  put factors;
+  24  put 'Maximum Revenue, R', R.l /
+****                              $140
+**** 140  Unknown symbol
+  25      'Man hours, h', h.l/
+  26      'Tons of raw material, s',s.l /
+  27      ;
 
-**** 1 ERROR(S)   0 WARNING(S)
+**** 8 ERROR(S)   0 WARNING(S)
 
 
-COMPILATION TIME     =        0.000 SECONDS      2 MB  25.1.1 r66732 WEX-WEI
+COMPILATION TIME     =        0.015 SECONDS      2 MB  25.1.1 r66732 WEX-WEI
 
 
 USER: Chintan Bhomia, Single User License            G180612/0001CN-GEN
@@ -48,7 +57,6 @@ USER: Chintan Bhomia, Single User License            G180612/0001CN-GEN
 
 **** FILE SUMMARY
 
-Restart    C:\Users\cnbho\Documents\GitHub\KKT\codes\aaa.g00
 Input      C:\Users\cnbho\Documents\GitHub\KKT\codes\factors_kkt.gms
 Output     C:\Users\cnbho\Documents\GitHub\KKT\codes\factors_kkt.lst
 
