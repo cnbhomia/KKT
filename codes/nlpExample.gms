@@ -82,3 +82,4 @@ option
     limrow =10;
 solve m using nlp min z;
 display sssdef.m , tttdef.m;
+

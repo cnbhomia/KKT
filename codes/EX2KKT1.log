@@ -1,0 +1,52 @@
+--- Job EX2KKT1.gms Start 07/26/18 16:32:20 25.1.1 r66732 WEX-WEI x86 64bit/MS Windows
+GAMS 25.1.1   Copyright (C) 1987-2018 GAMS Development. All rights reserved
+Licensee: Chintan Bhomia, Single User License            G180612/0001CN-GEN
+          GAMS Development, Fairfax                                 DC14199
+          cbhomia@gams.com                                                 
+--- Starting continued compilation
+--- Workfile was generated under GAMS version WEX251-251
+--- EX2KKT1.gms(36) 3 Mb
+--- Starting execution: elapsed 0:00:00.009[LST:46]
+--- EX2KKT1.gms(102) 4 Mb
+--- Generating MCP model nlpkkt[LST:46]
+--- EX2KKT1.gms(104) 6 Mb
+---   27 rows  27 columns  96 non-zeroes
+---   17 nl-code  4 nl-non-zeroes
+--- EX2KKT1.gms(104) 4 Mb
+--- Executing PATH: elapsed 0:00:00.016[LST:274]
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             25.1.1 r66732 Released May 19, 2018 WEI x86 64bit/MS Windows 
+
+18 row/cols, 46 non-zeros, 14.20% dense.
+
+Path 4.7.04 (Sat May 19 15:07:52 2018)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+Zero:     6 Single:     6 Double:     0
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 0
+Minor Iterations. . . . 0
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 0
+Gradient Steps. . . . . 0
+Function Evaluations. . 0
+Gradient Evaluations. . 0
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.000000
+Residual. . . . . . . . 0.000000e+00
+Postsolved residual: 8.8861e-16
+
+--- Restarting execution
+--- EX2KKT1.gms(104) 2 Mb
+--- Reading solution for model nlpkkt[LST:289]
+--- Executing after solve: elapsed 0:00:00.082[LST:433]
+--- EX2KKT1.gms(106) 3 Mb
+*** Status: Normal completion[LST:449]
+--- Job EX2KKT1.gms Stop 07/26/18 16:32:20 elapsed 0:00:00.083
