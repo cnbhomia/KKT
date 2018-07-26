@@ -32,27 +32,27 @@ i3        -2    -2           -1    4   ;
 
 variable
   z         'objective var'
-  varJ(j)   'variable over set j'
-  varI(i)   'variable over set i'
+  ttt(j)   'variable over set j'
+  sss(i)   'variable over set i'
   ;
 positive variable
   x(j)     'positive variable over set j'
   ;
 equation
   objDef
-  eqvarI(i)
-  eqvarJ(j)
+  sssdef(i)
+  tttdef(j)
   eSum
   sSum
   allBnd
   ;
 
-objDef.. sum{j, c(j)*x(j)} + sum{i, sqr(varI(i)-s0(i))} =E= z;
-eqvarI(i).. varI(i) =E= sum{j, A(i,j) * varJ(j)};
-eqvarJ(j).. varJ(j) =E= 4*x(j) + x(j+1);
+objDef.. sum{j, c(j)*x(j)} + sum{i, sqr(sss(i)-s0(i))} =E= z;
+sssdef(i).. sss(i) =E= sum{j, A(i,j) * ttt(j)};
+tttdef(j).. ttt(j) =E= 4*x(j) + x(j+1);
 eSum..      sum{j2(j), exp(x(j)-1)} - eMin =G= 0;
-sSum..      sum{i2(i), varI(i)} - sLow =G= 0;
-allBnd..    sum{j, x(j) + varJ(j)} + sum{i, varI(i)} -vMax =L= 0;
+sSum..      sum{i2(i), sss(i)} - sLow =G= 0;
+allBnd..    sum{j, x(j) + ttt(j)} + sum{i, sss(i)} -vMax =L= 0;
 
 model nonlinear 'NLP model' / all /;
 solve nonlinear using nlp min z;

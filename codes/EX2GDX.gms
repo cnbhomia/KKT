@@ -61,7 +61,7 @@ execute_unload "EX2GDX.gdx" z varJ varI objDef eqvarJ eqvarI eSum sSum allBnd;
 
 execute 'gdxxrw.exe EX2GDX.gdx  o=EX2.xls var=z varJ varI objDef eqvarJ eqvarI eSum sSum allBnd'
 
-FILE EX2GDX /EX2.py/;
+FILE EX2GDX /EX2.txt/;
 put EX2GDX;
 put "Objective z", z.l /;
 put "Variable VarJ"/;

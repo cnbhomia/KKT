@@ -10,26 +10,25 @@ equations
      dLdttt(j)
      dLdsss(i)
      dLdx(j)
-*dLdx(i,j+1)
-
      ;
+
+*initializing the marginals/lagrangian multipliers
 p.l(i)= sssdef.m(i);
 q.l(j) =tttdef.m(j);
 r1.l = esum.m;
 r2.l = ssum.m;
 s1.l = allbnd.m;
 
+* dummy equations
+
 dLdttt(j)..   37 =n= 0;             ttt.fx(j)=ttt.l(j);
 
-
 dLdsss(i).. p(i) + 37 =n= 0;               sss.fx(i) = sss.l(i);
-
 
 dLdx(j)..  q(j)+ r1 + r2 + s1 =n= 0;   x.fx(j) = x.l(j);
 
 
-
-model nlpkkt / dLdttt.ttt , dLdsss.sss, dLdx.x / ;
+model nlpkkt / dLdttt.ttt , dLdsss.sss, dLdx.x, sssdef.p , tttdef.q,  esum.r1, ssum.r2, allbnd.s1 / ;
 
 nlpkkt.iterlim=0;
 

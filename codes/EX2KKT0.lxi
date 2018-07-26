@@ -1,0 +1,38 @@
+B 2 C o m p i l a t i o n
+B 48 Equation Listing    SOLVE nlpkkt Using MCP From line 94
+D 49 dLdttt
+D 55 dLdsss
+D 64 dLdx
+D 75 sssdef
+D 84 tttdef
+D 95 eSum
+D 100 sSum
+D 105 allBnd
+B 112 Column Listing      SOLVE nlpkkt Using MCP From line 94
+E 113 ttt
+E 139 sss
+E 159 x
+E 181 p
+E 196 q
+E 212 r1
+E 224 r2
+E 236 s1
+B 250 Model Statistics    SOLVE nlpkkt Using MCP From line 94
+B 268 Solution Report     SOLVE nlpkkt Using MCP From line 94
+F 301 dLdttt
+F 306 dLdsss
+F 314 dLdx
+F 325 sssdef
+F 333 tttdef
+F 342 eSum
+F 343 sSum
+F 344 allBnd
+G 345 ttt
+G 356 sss
+G 364 x
+G 375 p
+G 383 q
+G 394 r1
+G 398 r2
+G 399 s1
+B 414 E x e c u t i o n
