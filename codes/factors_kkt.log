@@ -1,0 +1,85 @@
+--- Job factors_kkt.gms Start 07/26/18 15:55:43 25.1.1 r66732 WEX-WEI x86 64bit/MS Windows
+GAMS 25.1.1   Copyright (C) 1987-2018 GAMS Development. All rights reserved
+Licensee: Chintan Bhomia, Single User License            G180612/0001CN-GEN
+          GAMS Development, Fairfax                                 DC14199
+          cbhomia@gams.com                                                 
+--- Starting continued compilation
+--- Workfile was generated under GAMS version WEX251-251
+--- factors_kkt.gms(26) 2 Mb
+--- Starting execution: elapsed 0:00:00.006[LST:36]
+--- factors_kkt.gms(44) 3 Mb
+--- Generating MCP model kkt[LST:36]
+--- factors_kkt.gms(45) 5 Mb
+---   3 rows  3 columns  8 non-zeroes
+---   25 nl-code  4 nl-non-zeroes
+--- factors_kkt.gms(45) 3 Mb
+--- Executing PATH: elapsed 0:00:00.012[LST:88]
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             25.1.1 r66732 Released May 19, 2018 WEI x86 64bit/MS Windows 
+
+3 row/cols, 8 non-zeros, 88.89% dense.
+
+Path 4.7.04 (Sat May 19 15:07:52 2018)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  6.6667e+02 var: (h)
+Maximum of F. . . . . . . . . .  3.6380e-12 eqn: (con1)
+Maximum of Grad F . . . . . . .  1.7000e+02 eqn: (dLds)
+                                            var: (con1_m)
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.9000e+02 eqn: (con1)
+Minimum Row Norm. . . . . . . .  2.0467e+01 eqn: (dLdh)
+Maximum Column Norm . . . . . .  1.9000e+02 var: (con1_m)
+Minimum Column Norm . . . . . .  2.0467e+01 var: (h)
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             3.6384e-12             0.0e+00 (con1)
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     1     1 3.6384e-12           I 0.0e+00 3.6e-12 (con1)
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  3.6380e-12 eqn: (con1)
+Inf-Norm of Normal Map. . . . .  3.6380e-12 eqn: (con1)
+Inf-Norm of Minimum Map . . . .  3.6380e-12 eqn: (con1)
+Inf-Norm of Fischer Function. .  3.6380e-12 eqn: (con1)
+Inf-Norm of Grad Fischer Fcn. .  6.1803e-10 eqn: (dLds)
+Two-Norm of Grad Fischer Fcn. .  6.2238e-10
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  6.6667e+02 var: (h)
+Maximum of F. . . . . . . . . .  3.6380e-12 eqn: (con1)
+Maximum of Grad F . . . . . . .  1.7000e+02 eqn: (dLds)
+                                            var: (con1_m)
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 0
+Minor Iterations. . . . 0
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 0
+Gradient Steps. . . . . 0
+Function Evaluations. . 1
+Gradient Evaluations. . 1
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.016000
+Residual. . . . . . . . 3.638423e-12
+
+--- Restarting execution
+--- factors_kkt.gms(45) 2 Mb
+--- Reading solution for model kkt[LST:103]
+--- Executing after solve: elapsed 0:00:00.103[LST:179]
+--- factors_kkt.gms(51) 3 Mb
+--- Putfile factors C:\Users\cnbho\Documents\GitHub\KKT\codes\sd_kkt.log[FIL:"C:\Users\cnbho\Documents\GitHub\KKT\codes\sd_kkt.log",1,1]
+*** Status: Normal completion[LST:200]
+--- Job factors_kkt.gms Stop 07/26/18 15:55:43 elapsed 0:00:00.106

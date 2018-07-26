@@ -1,0 +1,63 @@
+--- Job sd_kkt.gms Start 07/26/18 15:56:02 25.1.1 r66732 WEX-WEI x86 64bit/MS Windows
+GAMS 25.1.1   Copyright (C) 1987-2018 GAMS Development. All rights reserved
+Licensee: Chintan Bhomia, Single User License            G180612/0001CN-GEN
+          GAMS Development, Fairfax                                 DC14199
+          cbhomia@gams.com                                                 
+--- Starting continued compilation
+--- Workfile was generated under GAMS version WEX251-251
+--- sd_kkt.gms(17) 2 Mb
+--- Starting execution: elapsed 0:00:00.008[LST:27]
+--- sd_kkt.gms(42) 3 Mb
+--- Generating MCP model kkt[LST:27]
+--- sd_kkt.gms(43) 5 Mb
+---   3 rows  3 columns  8 non-zeroes
+---   25 nl-code  4 nl-non-zeroes
+--- sd_kkt.gms(43) 3 Mb
+--- Executing PATH: elapsed 0:00:00.015[LST:79]
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             25.1.1 r66732 Released May 19, 2018 WEI x86 64bit/MS Windows 
+
+3 row/cols, 8 non-zeros, 88.89% dense.
+
+Path 4.7.04 (Sat May 19 15:07:52 2018)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     1     1 3.2033e+02           I 0.0e+00 3.2e+02 (dLdh)
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  1.5533e+05 eqn: (dLdh)
+Inf-Norm of Normal Map. . . . .  4.6669e+02 eqn: (dLdh)
+Inf-Norm of Minimum Map . . . .  4.6669e+02 eqn: (dLdh)
+Inf-Norm of Fischer Function. .  3.2033e+02 eqn: (dLdh)
+Inf-Norm of Grad Fischer Fcn. .  2.7429e+04 eqn: (con1)
+Two-Norm of Grad Fischer Fcn. .  2.7429e+04
+
+ ** EXIT - iteration limit.
+
+Major Iterations. . . . 0
+Minor Iterations. . . . 0
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 0
+Gradient Steps. . . . . 0
+Function Evaluations. . 1
+Gradient Evaluations. . 1
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.000000
+Residual. . . . . . . . 3.203316e+02
+
+--- Restarting execution
+--- sd_kkt.gms(43) 2 Mb
+--- Reading solution for model kkt[LST:94]
+--- Executing after solve: elapsed 0:00:00.085[LST:155]
+--- sd_kkt.gms(45) 3 Mb
+*** Error at line 45: Execution halted: abort$1 'We should start at a solution'[LST:160]
+--- sd_kkt.gms(45) 3 Mb 1 Error
+*** Status: Execution error(s)[LST:177]
+--- Job sd_kkt.gms Stop 07/26/18 15:56:02 elapsed 0:00:00.087
