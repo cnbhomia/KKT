@@ -56,3 +56,15 @@ allBnd..    sum{j, x(j) + ttt(j)} + sum{i, sss(i)} -vMax =L= 0;
 
 model nonlinear 'NLP model' / all /;
 solve nonlinear using nlp min z;
+
+file EX2 /EX2.txt/
+put EX2;
+put "Objective Function" , z.l / /;
+put 'Var ttt(j)'/;
+loop(j, put 'ttt(', @5,j.tl,@7')' ,@14, ttt.l(j)/);
+put /;
+put 'Var sss(i)' /;
+loop(i, put 'sss(', @5,i.tl,@7')' ,@14, sss.l(i)/);
+put /;
+put 'Var x(j)' /;
+loop(j, put 'x(', @3,j.tl,@5')' ,@14, x.l(j)/);

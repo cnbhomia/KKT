@@ -1,4 +1,4 @@
-GAMS 25.1.1  r66732 Released May 19, 2018 WEX-WEI x86 64bit/MS Windows 07/26/18 15:45:55 Page 1
+GAMS 25.1.1  r66732 Released May 19, 2018 WEX-WEI x86 64bit/MS Windows - 07/26/18 16:15:28 Page 1
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 C o m p i l a t i o n
 
@@ -61,34 +61,38 @@ C o m p i l a t i o n
   56   
   57  model nonlinear 'NLP model' / all /;
   58  solve nonlinear using nlp min z;
+  59   
+  60  file EX2 /EX2.txt/
+  61  put EX2;
+  62  put "Objective Function" , z.l / /;
+  63  put 'Var ttt(j)'/;
+  64  loop(j, put 'ttt(', @5,j.tl,@7')' ,@14, ttt.l(j)/);
+  65  put /;
+  66  put 'Var sss(i)' /;
+  67  loop(i, put 'sss(', @5,i.tl,@7')' ,@14, sss.l(i)/);
+  68  put /;
+  69  put 'Var x(j)' /;
+  70  loop(j, put 'x(', @3,j.tl,@5')' ,@14, x.l(j)/);
 
 
 COMPILATION TIME     =        0.000 SECONDS      3 MB  25.1.1 r66732 WEX-WEI
-GAMS 25.1.1  r66732 Released May 19, 2018 WEX-WEI x86 64bit/MS Windows 07/26/18 15:45:55 Page 2
+GAMS 25.1.1  r66732 Released May 19, 2018 WEX-WEI x86 64bit/MS Windows - 07/26/18 16:15:28 Page 2
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Equation Listing    SOLVE nonlinear Using NLP From line 58
 
 
 ---- objDef  =E=  
 
-objDef..  - z - (20)*sss(i1) - (40)*sss(i2) + (20)*sss(i3) + 2*x(j1) - 2*x(j2)
-     
-      + 2*x(j3) - 2*x(j4) + 2*x(j5) - 2*x(j6) =E= 0 ;
-     
-      (LHS = 600, INFES = 600 ****)
+objDef..  - z - (20)*sss(i1) - (40)*sss(i2) + (20)*sss(i3) + 2*x(j1) - 2*x(j2) + 2*x(j3) - 2*x(j4) + 2*x(j5) - 2*x(j6) =E= 0 ; (LHS = 600, INFES = 600 ****)
      
 
 ---- sssdef  =E=  
 
-sssdef(i1)..  - ttt(j1) - 4*ttt(j2) - 2*ttt(j3) - 2*ttt(j6) + sss(i1) =E= 0 ;
-     
-      (LHS = 0)
+sssdef(i1)..  - ttt(j1) - 4*ttt(j2) - 2*ttt(j3) - 2*ttt(j6) + sss(i1) =E= 0 ; (LHS = 0)
      
 sssdef(i2)..  - 4*ttt(j3) - ttt(j4) - 2*ttt(j5) + sss(i2) =E= 0 ; (LHS = 0)
      
-sssdef(i3)..  2*ttt(j2) + 2*ttt(j3) + ttt(j5) - 4*ttt(j6) + sss(i3) =E= 0 ;
-     
-      (LHS = 0)
+sssdef(i3)..  2*ttt(j2) + 2*ttt(j3) + ttt(j5) - 4*ttt(j6) + sss(i3) =E= 0 ; (LHS = 0)
      
 
 ---- tttdef  =E=  
@@ -104,11 +108,7 @@ REMAINING 3 ENTRIES SKIPPED
 
 ---- eSum  =G=  
 
-eSum..  (0.367879441171442)*x(j2) + (0.367879441171442)*x(j4)
-     
-      + (0.367879441171442)*x(j5) + (0.367879441171442)*x(j6) =G= 2.5 ;
-     
-      (LHS = 1.47151776468577, INFES = 1.02848223531423 ****)
+eSum..  (0.367879441171442)*x(j2) + (0.367879441171442)*x(j4) + (0.367879441171442)*x(j5) + (0.367879441171442)*x(j6) =G= 2.5 ; (LHS = 1.47151776468577, INFES = 1.02848223531423 ****)
      
 
 ---- sSum  =G=  
@@ -118,12 +118,9 @@ sSum..  sss(i1) + sss(i2) =G= -100 ; (LHS = 0)
 
 ---- allBnd  =L=  
 
-allBnd..  ttt(j1) + ttt(j2) + ttt(j3) + ttt(j4) + ttt(j5) + ttt(j6) + sss(i1)
+allBnd..  ttt(j1) + ttt(j2) + ttt(j3) + ttt(j4) + ttt(j5) + ttt(j6) + sss(i1) + sss(i2) + sss(i3) + x(j1) + x(j2) + x(j3) + x(j4) + x(j5) + x(j6) =L= 20 ; (LHS = 0)
      
-      + sss(i2) + sss(i3) + x(j1) + x(j2) + x(j3) + x(j4) + x(j5) + x(j6) =L= 20
-      ; (LHS = 0)
-     
-GAMS 25.1.1  r66732 Released May 19, 2018 WEX-WEI x86 64bit/MS Windows 07/26/18 15:45:55 Page 3
+GAMS 25.1.1  r66732 Released May 19, 2018 WEX-WEI x86 64bit/MS Windows - 07/26/18 16:15:28 Page 3
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Column Listing      SOLVE nonlinear Using NLP From line 58
 
@@ -207,7 +204,7 @@ x(j3)
         1       allBnd
 
 REMAINING 3 ENTRIES SKIPPED
-GAMS 25.1.1  r66732 Released May 19, 2018 WEX-WEI x86 64bit/MS Windows 07/26/18 15:45:55 Page 4
+GAMS 25.1.1  r66732 Released May 19, 2018 WEX-WEI x86 64bit/MS Windows - 07/26/18 16:15:28 Page 4
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Model Statistics    SOLVE nonlinear Using NLP From line 58
 
@@ -225,7 +222,7 @@ GENERATION TIME      =        0.000 SECONDS      4 MB  25.1.1 r66732 WEX-WEI
 
 
 EXECUTION TIME       =        0.000 SECONDS      4 MB  25.1.1 r66732 WEX-WEI
-GAMS 25.1.1  r66732 Released May 19, 2018 WEX-WEI x86 64bit/MS Windows 07/26/18 15:45:55 Page 5
+GAMS 25.1.1  r66732 Released May 19, 2018 WEX-WEI x86 64bit/MS Windows - 07/26/18 16:15:28 Page 5
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Solution Report     SOLVE nonlinear Using NLP From line 58
 
@@ -240,7 +237,7 @@ Solution Report     SOLVE nonlinear Using NLP From line 58
 **** MODEL STATUS      2 Locally Optimal           
 **** OBJECTIVE VALUE               75.4112
 
- RESOURCE USAGE, LIMIT          0.016      1000.000
+ RESOURCE USAGE, LIMIT          0.000      1000.000
  ITERATION COUNT, LIMIT        12    2000000000
  EVALUATION ERRORS              0             0
 CONOPT 3         25.1.1 r66732 Released May 19, 2018 WEI x86 64bit/MS Windows 
@@ -265,85 +262,93 @@ CONOPT 3         25.1.1 r66732 Released May 19, 2018 WEI x86 64bit/MS Windows
  ** Optimal solution. Reduced gradient less than tolerance.
  
  
- CONOPT time Total                            0.006 seconds
-   of which: Function evaluations             0.000 =  0.0%
+ CONOPT time Total                            0.001 seconds
+   of which: Function evaluations             0.001 =100.0%
              1st Derivative evaluations       0.000 =  0.0%
              Directional 2nd Derivative       0.000 =  0.0%
  
 
-                       LOWER     LEVEL     UPPER    MARGINAL
+                           LOWER          LEVEL          UPPER         MARGINAL
 
----- EQU objDef          .         .         .       -1.000      
+---- EQU objDef              .              .              .            -1.0000      
 
 ---- EQU sssdef  
 
-      LOWER     LEVEL     UPPER    MARGINAL
+          LOWER          LEVEL          UPPER         MARGINAL
 
-i1      .         .         .        4.722      
-i2      .         .         .        2.822      
-i3      .         .         .       19.645      
+i1          .              .              .             4.7221      
+i2          .              .              .             2.8220      
+i3          .              .              .            19.6452      
 
 ---- EQU tttdef  
 
-      LOWER     LEVEL     UPPER    MARGINAL
+          LOWER          LEVEL          UPPER         MARGINAL
 
-j1      .         .         .       20.161      
-j2      .         .         .       -4.963      
-j3      .         .         .       -3.119      
-j4      .         .         .       18.261      
-j5      .         .         .        1.438      
-j6      .         .         .      103.464      
+j1          .              .              .            20.1612      
+j2          .              .              .            -4.9627      
+j3          .              .              .            -3.1191      
+j4          .              .              .            18.2611      
+j5          .              .              .             1.4379      
+j6          .              .              .           103.4641      
 
-                       LOWER     LEVEL     UPPER    MARGINAL
+                           LOWER          LEVEL          UPPER         MARGINAL
 
----- EQU eSum           2.500     2.500     +INF     31.289      
----- EQU sSum        -100.000    18.333     +INF       .         
----- EQU allBnd         -INF     20.000    20.000   -15.439      
+---- EQU eSum               2.5000         2.5000        +INF           31.2889      
+---- EQU sSum            -100.0000        18.3329        +INF             .          
+---- EQU allBnd            -INF           20.0000        20.0000       -15.4391      
 
-                       LOWER     LEVEL     UPPER    MARGINAL
+                           LOWER          LEVEL          UPPER         MARGINAL
 
----- VAR z              -INF     75.411     +INF       .         
+---- VAR z                 -INF           75.4112        +INF             .          
 
   z  objective var
 
 ---- VAR ttt  variable over set j
 
-      LOWER     LEVEL     UPPER    MARGINAL
+          LOWER          LEVEL          UPPER         MARGINAL
 
-j1     -INF      0.178     +INF       .         
-j2     -INF      0.846     +INF       .         
-j3     -INF      0.540     +INF       .         
-j4     -INF      1.281     +INF       .         
-j5     -INF      5.125     +INF       .         
-j6     -INF       .        +INF       .         
+j1        -INF            0.1777        +INF             .          
+j2        -INF            0.8459        +INF             .          
+j3        -INF            0.5400        +INF             .          
+j4        -INF            1.2813        +INF             .          
+j5        -INF            5.1251        +INF             .          
+j6        -INF             .            +INF             .          
 
 ---- VAR sss  variable over set i
 
-      LOWER     LEVEL     UPPER    MARGINAL
+          LOWER          LEVEL          UPPER         MARGINAL
 
-i1     -INF      4.642     +INF       .         
-i2     -INF     13.691     +INF       .         
-i3     -INF     -7.897     +INF       .         
+i1        -INF            4.6415        +INF             .          
+i2        -INF           13.6914        +INF             .          
+i3        -INF           -7.8970        +INF             .          
 
 ---- VAR x  positive variable over set j
 
-      LOWER     LEVEL     UPPER    MARGINAL
+          LOWER          LEVEL          UPPER         MARGINAL
 
-j1      .         .        +INF     98.084      
-j2      .        0.178     +INF       .         
-j3      .        0.135     +INF  -5.220E-9      
-j4      .         .        +INF     71.854      
-j5      .        1.281     +INF       .         
-j6      .         .        +INF    417.223      
+j1          .              .            +INF           98.0841      
+j2          .             0.1777        +INF             .          
+j3          .             0.1350        +INF      -5.220459E-9      
+j4          .              .            +INF           71.8538      
+j5          .             1.2813        +INF             .          
+j6          .              .            +INF          417.2228      
 
 
 **** REPORT SUMMARY :        0     NONOPT
                              0 INFEASIBLE
                              0  UNBOUNDED
                              0     ERRORS
+GAMS 25.1.1  r66732 Released May 19, 2018 WEX-WEI x86 64bit/MS Windows - 07/26/18 16:15:28 Page 6
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+E x e c u t i o n
 
 
-EXECUTION TIME       =        0.000 SECONDS      2 MB  25.1.1 r66732 WEX-WEI
+**** REPORT FILE SUMMARY
+
+EX2 C:\Users\cnbho\Documents\GitHub\KKT\codes\EX2.txt
+
+
+EXECUTION TIME       =        0.000 SECONDS      3 MB  25.1.1 r66732 WEX-WEI
 
 
 USER: Chintan Bhomia, Single User License            G180612/0001CN-GEN
@@ -354,4 +359,4 @@ USER: Chintan Bhomia, Single User License            G180612/0001CN-GEN
 
 Input      C:\Users\cnbho\Documents\GitHub\KKT\codes\EX2.gms
 Output     C:\Users\cnbho\Documents\GitHub\KKT\codes\EX2.lst
-Save       C:\Users\cnbho\Documents\GitHub\KKT\codes\xyz.g0?
+Save       C:\Users\cnbho\Documents\GitHub\KKT\codes\aaa.g0?

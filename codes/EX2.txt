@@ -1,0 +1,22 @@
+Objective Function       75.41
+
+Var ttt(j)
+ttt(j1)              0.18
+ttt(j2)              0.85
+ttt(j3)              0.54
+ttt(j4)              1.28
+ttt(j5)              5.13
+ttt(j6)              0.00
+
+Var sss(i)
+sss(i1)              4.64
+sss(i2)             13.69
+sss(i3)             -7.90
+
+Var x(j)
+x(j1)                0.00
+x(j2)                0.18
+x(j3)                0.14
+x(j4)                0.00
+x(j5)                1.28
+x(j6)                0.00

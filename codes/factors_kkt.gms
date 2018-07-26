@@ -18,7 +18,7 @@ solve kkt using MCP;
 
 *abort $(kkt.objval >1e-5) 'We should start at a solution';
 
-file factors /sd_kkt.log/
+file factors /factors_kkt.txt/
 put factors;
 put 'Maximum Revenue, R', R.l / 
     'Man hours, h', h.l/ 
