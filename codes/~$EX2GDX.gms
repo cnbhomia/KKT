@@ -56,3 +56,25 @@ allBnd..    sum{j, x(j) + varJ(j)} + sum{i, varI(i)} -vMax =L= 0;
 
 model nonlinear 'NLP model' / all /;
 solve nonlinear using nlp min z;
+
+execute_unload "EX2GDX.gdx" z varJ varI objDef eqvarJ eqvarI eSum sSum allBnd;
+
+execute 'gdxxrw.exe EX2GDX.gdx  o=EX2.xls var=z varJ varI objDef eqvarJ eqvarI eSum sSum allBnd'
+
+FILE EX2GDX /EX2.txt/;
+put EX2GDX;
+put "Objective z", z.l /;
+put "Variable VarJ"/;
+loop((j),
+    put @7,j.tl,@14,varJ.l(j)/;
+);
+
+put "Variable VarI"/;
+loop((i),
+    put @7,i.tl,@14,varI.l(i)/;
+);
+
+put "Variable x"/;
+loop((j),
+    put @7,j.tl,@14,x.l(j)/;
+);
