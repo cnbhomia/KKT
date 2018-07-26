@@ -333,4 +333,64 @@ LaTeX Font Info:    Try loading font information for U+msa on input line 22.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-(/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt
+(/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-msa.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 22.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+)
+LaTeX Font Info:    Try loading font information for U+lasy on input line 22.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/ulasy.fd
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+)
+Underfull \hbox (badness 10000) in paragraph at lines 49--50
+
+ []
+
+Excluding 'comment' comment. [1
+
+{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `cmtt' (encoding: OT1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+ (./codes/factors.txt) (./codes/sd_nlp.gms) [2]
+(./codes/sd_kkt.gms) (./codes/sd_kkt.log [3]) (./codes/sd_kkt_dummy.gms
+[4]) (./codes/EX2.gms [5]) (./codes/EX2.xlsx
+
+./codes/EX2.xlsx:1: Package inputenc Error: Unicode character ^^C (U+3)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1 PK^^C
+         ^^D^^T^^@^^F^^@^^H^^@^^@^^@!^^@Fð€u^^A^^@^^@8^^G^^@^^@^^S^^@^^H^^B...
+
+? 
+./codes/EX2.xlsx:1: Emergency stop.
+ ...                                              
+                                                  
+l.1 PK^^C
+         ^^D^^T^^@^^F^^@^^H^^@^^@^^@!^^@Fð€u^^A^^@^^@8^^G^^@^^@^^S^^@^^H^^B...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+ 
+Here is how much of TeX's memory you used:
+ 6088 strings out of 492649
+ 88626 string characters out of 6129622
+ 383330 words of memory out of 5000000
+ 9832 multiletter control sequences out of 15000+600000
+ 8625 words of font info for 51 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 41i,26n,38p,1228b,1565s stack positions out of 5000i,500n,10000p,200000b,80000s
+./codes/EX2.xlsx:1:  ==> Fatal error occurred, no output PDF file produced!
