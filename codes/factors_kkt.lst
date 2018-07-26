@@ -1,0 +1,198 @@
+GAMS 25.1.1  r66732 Released May 19, 2018 WEX-WEI x86 64bit/MS Windows - 07/26/18 15:51:01 Page 6
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+C o m p i l a t i o n
+
+
+  29  variables
+  30      con1_m 'marginal value for con1' /up 0/
+  31      ;
+  32  Equations
+  33      dLdh 'gradL wrt h'
+  34      dLds 'gradL wrt s'
+  35      ;
+  36   
+  37  con1_m.l=con1.m;
+  38  dLdh.. - 200*(2/3) * ([h**(2/3)]/h)  * s**(1/3) - con1_m*(200) =n=0;
+  39  dLds.. - 200 * h**(2/3) * (1/3)*s**(-2/3) - con1_m*(170) =n=0;
+  40   
+  41  *dLdh.. 37 =n=0 ; h.fx=h.L;
+  42  *dLds.. 37 =n=0;             s.fx=s.L;
+  43  model kkt /dLdh.h,dLds.s,con1.con1_m/;
+  44  kkt.iterlim=30;
+  45  solve kkt using MCP;
+  46   
+  47  *abort $(kkt.objval >1e-5) 'We should start at a solution';
+  48   
+  49  file factors /factors_kkt.txt/
+  50  put factors;
+  51  put 'Maximum Revenue, R', R.l /
+  52      'Man hours, h', h.l/
+  53      'Tons of raw material, s',s.l /
+  54      ;
+
+
+COMPILATION TIME     =        0.000 SECONDS      2 MB  25.1.1 r66732 WEX-WEI
+GAMS 25.1.1  r66732 Released May 19, 2018 WEX-WEI x86 64bit/MS Windows - 07/26/18 15:51:01 Page 7
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Equation Listing    SOLVE kkt Using MCP From line 45
+
+
+---- dLdh  =N=  gradL wrt h
+
+dLdh..  (0.0259274079155213)*h - (0.440765934563863)*s - 200*con1_m =N= 0 ; (LHS = 466.693342479384)
+     
+
+---- dLds  =N=  gradL wrt s
+
+dLds..  - (0.440765934563863)*h + (7.49302088758567)*s - 170*con1_m =N= 0 ; (LHS = 0)
+     
+
+---- con1  =L=  constraint on budget
+
+con1..  20*h + 170*s =L= 20000 ; (LHS = 20000)
+     
+GAMS 25.1.1  r66732 Released May 19, 2018 WEX-WEI x86 64bit/MS Windows - 07/26/18 15:51:01 Page 8
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Column Listing      SOLVE kkt Using MCP From line 45
+
+
+---- h  man hours in production
+
+h
+                (.LO, .L, .UP, .M = 1, 666.666666666667, 50000, 0)
+       (0.0259) dLdh
+      (-0.4408) dLds
+       20       con1
+
+
+---- s  tons of raw material
+
+s
+                (.LO, .L, .UP, .M = 1, 39.2156862745098, 50000, EPS)
+      (-0.4408) dLdh
+       (7.493)  dLds
+      170       con1
+
+
+---- con1_m  marginal value for con1
+
+con1_m
+                (.LO, .L, .UP, .M = -INF, -2.59274079155213, 0, 0)
+     -200       dLdh
+     -170       dLds
+
+GAMS 25.1.1  r66732 Released May 19, 2018 WEX-WEI x86 64bit/MS Windows - 07/26/18 15:51:01 Page 9
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE kkt Using MCP From line 45
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS            3
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES            3
+NON ZERO ELEMENTS             8     NON LINEAR N-Z              4
+DERIVATIVE POOL              20     CONSTANT POOL              21
+CODE LENGTH                  25
+
+
+GENERATION TIME      =        0.000 SECONDS      3 MB  25.1.1 r66732 WEX-WEI
+
+
+EXECUTION TIME       =        0.000 SECONDS      3 MB  25.1.1 r66732 WEX-WEI
+GAMS 25.1.1  r66732 Released May 19, 2018 WEX-WEI x86 64bit/MS Windows - 07/26/18 15:51:01 Page 10
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE kkt Using MCP From line 45
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   kkt                 
+     TYPE    MCP                 
+     SOLVER  PATH                FROM LINE  45
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      1 Optimal                   
+
+ RESOURCE USAGE, LIMIT          0.015      1000.000
+ ITERATION COUNT, LIMIT         4            30
+ EVALUATION ERRORS              0             0
+3 row/cols, 8 non-zeros, 88.89% dense.
+
+Path 4.7.04 (Sat May 19 15:07:52 2018)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  6.6667e+02 var: (h)
+Maximum of F. . . . . . . . . .  4.6669e+02 eqn: (dLdh)
+Maximum of Grad F . . . . . . .  2.0000e+02 eqn: (dLdh)
+                                            var: (con1_m)
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  2.0047e+02 eqn: (dLdh)
+Minimum Row Norm. . . . . . . .  1.7793e+02 eqn: (dLds)
+Maximum Column Norm . . . . . .  3.7000e+02 var: (con1_m)
+Minimum Column Norm . . . . . .  2.0467e+01 var: (h)
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  6.8951e-13 eqn: (dLds)
+Inf-Norm of Normal Map. . . . .  5.6843e-14 eqn: (dLdh)
+Inf-Norm of Minimum Map . . . .  5.6843e-14 eqn: (dLdh)
+Inf-Norm of Fischer Function. .  5.6843e-14 eqn: (dLdh)
+Inf-Norm of Grad Fischer Fcn. .  8.9528e-12 eqn: (con1)
+Two-Norm of Grad Fischer Fcn. .  8.9529e-12
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.6667e+02 var: (h)
+Maximum of F. . . . . . . . . .  5.6843e-14 eqn: (dLdh)
+Maximum of Grad F . . . . . . .  2.0000e+02 eqn: (dLdh)
+                                            var: (con1_m)
+
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- EQU dLdh              -INF      -5.68434E-14        +INF          166.6667      
+---- EQU dLds              -INF      1.421085E-14        +INF           98.0392      
+---- EQU con1              -INF        20000.0000     20000.0000        -0.5586      
+
+  dLdh  gradL wrt h
+  dLds  gradL wrt s
+  con1  constraint on budget
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- VAR h                  1.0000       166.6667     50000.0000          .          
+---- VAR s                  1.0000        98.0392     50000.0000          .          
+---- VAR con1_m            -INF           -0.5586          .              .          
+
+  h  man hours in production
+  s  tons of raw material
+  con1_m  marginal value for con1
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+                             0  REDEFINED
+                             0     ERRORS
+GAMS 25.1.1  r66732 Released May 19, 2018 WEX-WEI x86 64bit/MS Windows - 07/26/18 15:51:01 Page 11
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+E x e c u t i o n
+
+
+**** REPORT FILE SUMMARY
+
+factors C:\Users\cnbho\Documents\GitHub\KKT\codes\factors_kkt.txt
+
+
+EXECUTION TIME       =        0.000 SECONDS      3 MB  25.1.1 r66732 WEX-WEI
+
+
+USER: Chintan Bhomia, Single User License            G180612/0001CN-GEN
+      GAMS Development, Fairfax                                 DC14199
+
+
+**** FILE SUMMARY
+
+Restart    C:\Users\cnbho\Documents\GitHub\KKT\codes\qwe.g00
+Input      C:\Users\cnbho\Documents\GitHub\KKT\codes\factors_kkt.gms
+Output     C:\Users\cnbho\Documents\GitHub\KKT\codes\factors_kkt.lst
