@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  18 JUL 2018 15:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  26 JUL 2018 16:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -362,35 +362,35 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
  (./codes/factors.txt) (./codes/sd_nlp.gms) [2]
 (./codes/sd_kkt.gms) (./codes/sd_kkt.log [3]) (./codes/sd_kkt_dummy.gms
-[4]) (./codes/EX2.gms [5]) (./codes/EX2.xlsx
-
-./codes/EX2.xlsx:1: Package inputenc Error: Unicode character ^^C (U+3)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1 PK^^C
-         ^^D^^T^^@^^F^^@^^H^^@^^@^^@!^^@Fð€u^^A^^@^^@8^^G^^@^^@^^S^^@^^H^^B...
-
-? 
-./codes/EX2.xlsx:1: Emergency stop.
- ...                                              
-                                                  
-l.1 PK^^C
-         ^^D^^T^^@^^F^^@^^H^^@^^@^^@!^^@Fð€u^^A^^@^^@8^^G^^@^^@^^S^^@^^H^^B...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
- 
+[4]) (./codes/EX2.gms [5]) (./codes/EX2.txt [6]) (./codes/EX2KKT0.gms [7])
+(./codes/EX2KKT0.log [8]) [9] (./codes/EX2KKT1.gms) (./codes/EX2KKT1.log
+[10]) (./codes/EX2KKT3.gms [11]) [12] (./kkt.aux) ) 
 Here is how much of TeX's memory you used:
- 6088 strings out of 492649
- 88626 string characters out of 6129622
+ 6109 strings out of 492649
+ 88694 string characters out of 6129622
  383330 words of memory out of 5000000
  9832 multiletter control sequences out of 15000+600000
- 8625 words of font info for 51 fonts, out of 8000000 for 9000
+ 8772 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,26n,38p,1228b,1565s stack positions out of 5000i,500n,10000p,200000b,80000s
-./codes/EX2.xlsx:1:  ==> Fatal error occurred, no output PDF file produced!
+ 41i,10n,38p,1228b,1567s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2018/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2018/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2018/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2018/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2018/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2018/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2018/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2018/texmf-dist/font
+s/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2018/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2018/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2018/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1
+/public/amsfonts/symbols/msam10.pfb>
+Output written on kkt.pdf (12 pages, 179748 bytes).
+PDF statistics:
+ 95 PDF objects out of 1000 (max. 8388607)
+ 67 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 9217 words of extra memory for PDF output out of 10000 (max. 10000000)
+
