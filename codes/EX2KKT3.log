@@ -1,0 +1,61 @@
+--- Job EX2KKT3.gms Start 07/26/18 16:41:02 25.1.1 r66732 WEX-WEI x86 64bit/MS Windows
+GAMS 25.1.1   Copyright (C) 1987-2018 GAMS Development. All rights reserved
+Licensee: Chintan Bhomia, Single User License            G180612/0001CN-GEN
+          GAMS Development, Fairfax                                 DC14199
+          cbhomia@gams.com                                                 
+--- Starting continued compilation
+--- Workfile was generated under GAMS version WEX251-251
+--- EX2KKT3.gms(39) 3 Mb
+--- Starting execution: elapsed 0:00:00.008[LST:49]
+--- EX2KKT3.gms(105) 4 Mb
+--- Generating MCP model nlpkkt[LST:49]
+--- EX2KKT3.gms(107) 6 Mb
+---   27 rows  27 columns  111 non-zeroes
+---   45 nl-code  12 nl-non-zeroes
+--- EX2KKT3.gms(107) 4 Mb
+--- Executing PATH: elapsed 0:00:00.015[LST:284]
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             25.1.1 r66732 Released May 19, 2018 WEI x86 64bit/MS Windows 
+
+27 row/cols, 111 non-zeros, 15.23% dense.
+
+Path 4.7.04 (Sat May 19 15:07:52 2018)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     1     1 5.2222e-09           I 0.0e+00 5.2e-09 (dLdx(j3))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  5.2205e-09 eqn: (dLdx(j3))
+Inf-Norm of Normal Map. . . . .  5.2205e-09 eqn: (dLdx(j3))
+Inf-Norm of Minimum Map . . . .  5.2205e-09 eqn: (dLdx(j3))
+Inf-Norm of Fischer Function. .  5.2205e-09 eqn: (dLdx(j3))
+Inf-Norm of Grad Fischer Fcn. .  2.0882e-08 eqn: (tttdef(j3))
+Two-Norm of Grad Fischer Fcn. .  2.2149e-08
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 0
+Minor Iterations. . . . 0
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 0
+Gradient Steps. . . . . 0
+Function Evaluations. . 1
+Gradient Evaluations. . 1
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.000000
+Residual. . . . . . . . 5.222184e-09
+
+--- Restarting execution
+--- EX2KKT3.gms(107) 2 Mb
+--- Reading solution for model nlpkkt[LST:299]
+--- Executing after solve: elapsed 0:00:00.081[LST:451]
+--- EX2KKT3.gms(109) 3 Mb
+*** Status: Normal completion[LST:467]
+--- Job EX2KKT3.gms Stop 07/26/18 16:41:02 elapsed 0:00:00.082
