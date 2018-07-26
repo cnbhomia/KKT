@@ -10,8 +10,6 @@ equations
      dLdttt(j)
      dLdsss(i)
      dLdx(j)
-*dLdx(i,j+1)
-
      ;
 p.l(i)= sssdef.m(i);
 q.l(j) =tttdef.m(j);
@@ -29,7 +27,7 @@ dLdx(j)..  q(j)+ r1 + r2 + s1 =n= 0;   x.fx(j) = x.l(j);
 
 
 
-model nlpkkt / dLdttt.ttt , dLdsss.sss, dLdx.x / ;
+model nlpkkt /  dLdttt.ttt , dLdsss.sss, dLdx.x, sssdef.p , tttdef.q,  esum.r1, ssum.r2, allbnd.s1/ ;
 
 nlpkkt.iterlim=0;
 

@@ -1,0 +1,61 @@
+--- Job nlpkkt_alldummies.gms Start 07/26/18 14:55:32 25.1.1 r66732 WEX-WEI x86 64bit/MS Windows
+GAMS 25.1.1   Copyright (C) 1987-2018 GAMS Development. All rights reserved
+Licensee: Chintan Bhomia, Single User License            G180612/0001CN-GEN
+          GAMS Development, Fairfax                                 DC14199
+          cbhomia@gams.com                                                 
+--- Starting continued compilation
+--- Workfile was generated under GAMS version WEX251-251
+--- nlpkkt_alldummies.gms(36) 3 Mb
+--- Starting execution: elapsed 0:00:00.010[LST:46]
+--- nlpkkt_alldummies.gms(90) 4 Mb
+--- Generating MCP model nlpkkt[LST:46]
+--- nlpkkt_alldummies.gms(92) 6 Mb
+---   21 rows  27 columns  79 non-zeroes
+---   17 nl-code  4 nl-non-zeroes
+--- nlpkkt_alldummies.gms(92) 4 Mb
+--- Executing PATH: elapsed 0:00:00.017[LST:251]
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             25.1.1 r66732 Released May 19, 2018 WEI x86 64bit/MS Windows 
+
+12 row/cols, 0 non-zeros, 0.00% dense.
+
+Path 4.7.04 (Sat May 19 15:07:52 2018)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     1     1 1.3422e-10           I 0.0e+00 1.3e-10 (eSum)
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  4.1996e-09 eqn: (eSum)
+Inf-Norm of Normal Map. . . . .  1.3422e-10 eqn: (eSum)
+Inf-Norm of Minimum Map . . . .  1.3422e-10 eqn: (eSum)
+Inf-Norm of Fischer Function. .  1.3422e-10 eqn: (eSum)
+Inf-Norm of Grad Fischer Fcn. .  0.0000e+00 eqn: (sssdef(i1))
+Two-Norm of Grad Fischer Fcn. .  0.0000e+00
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 0
+Minor Iterations. . . . 0
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 0
+Gradient Steps. . . . . 0
+Function Evaluations. . 1
+Gradient Evaluations. . 1
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.000000
+Residual. . . . . . . . 1.342206e-10
+
+--- Restarting execution
+--- nlpkkt_alldummies.gms(92) 2 Mb
+--- Reading solution for model nlpkkt[LST:266]
+--- Executing after solve: elapsed 0:00:00.105[LST:412]
+--- nlpkkt_alldummies.gms(94) 3 Mb
+*** Status: Normal completion[LST:428]
+--- Job nlpkkt_alldummies.gms Stop 07/26/18 14:55:32 elapsed 0:00:00.110

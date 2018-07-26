@@ -1,38 +1,38 @@
 B 2 C o m p i l a t i o n
-B 48 Equation Listing    SOLVE nlpkkt Using MCP From line 94
-D 49 dLdttt
-D 55 dLdsss
-D 64 dLdx
-D 75 sssdef
-D 84 tttdef
-D 95 eSum
-D 100 sSum
-D 105 allBnd
-B 112 Column Listing      SOLVE nlpkkt Using MCP From line 94
-E 113 ttt
-E 139 sss
-E 159 x
-E 181 p
-E 196 q
-E 212 r1
-E 224 r2
-E 236 s1
-B 250 Model Statistics    SOLVE nlpkkt Using MCP From line 94
-B 268 Solution Report     SOLVE nlpkkt Using MCP From line 94
-F 301 dLdttt
-F 306 dLdsss
-F 314 dLdx
-F 325 sssdef
-F 333 tttdef
-F 342 eSum
-F 343 sSum
-F 344 allBnd
-G 345 ttt
-G 356 sss
-G 364 x
-G 375 p
-G 383 q
-G 394 r1
-G 398 r2
-G 399 s1
-B 414 E x e c u t i o n
+B 46 Equation Listing    SOLVE nlpkkt Using MCP From line 92
+D 47 dLdttt
+D 53 dLdsss
+D 62 dLdx
+D 73 sssdef
+D 82 tttdef
+D 93 eSum
+D 98 sSum
+D 103 allBnd
+B 110 Column Listing      SOLVE nlpkkt Using MCP From line 92
+E 111 ttt
+E 137 sss
+E 157 x
+E 179 p
+E 194 q
+E 210 r1
+E 222 r2
+E 234 s1
+B 248 Model Statistics    SOLVE nlpkkt Using MCP From line 92
+B 266 Solution Report     SOLVE nlpkkt Using MCP From line 92
+F 299 dLdttt
+F 304 dLdsss
+F 312 dLdx
+F 323 sssdef
+F 331 tttdef
+F 340 eSum
+F 341 sSum
+F 342 allBnd
+G 343 ttt
+G 354 sss
+G 362 x
+G 373 p
+G 381 q
+G 392 r1
+G 396 r2
+G 397 s1
+B 412 E x e c u t i o n
