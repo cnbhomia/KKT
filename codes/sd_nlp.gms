@@ -1,3 +1,5 @@
+$title : sd_nlp.gms MAX REVENUE MODEL, NLP FORMULATION
+
 $ontext
 The model below showcases using GAMS to identify / modify the KKT conditions for a given
 NLP formulation. Our starting point is a basic minimization NLP model.

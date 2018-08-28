@@ -1,3 +1,8 @@
+$title: refer EX2.gms,  KKT conditions development
+$ontext
+This is an advanced model for showcasing development of KKT conditions for an NLP
+$offtext
+
 sets
   j     'set j'           / j1 * j6 /
   j2(j) 'subset for j'    / j2, j4*j6 /

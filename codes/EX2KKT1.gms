@@ -1,3 +1,9 @@
+$title: refer EX2KKT1.gms,  KKT conditions development
+$ontext
+This is an advanced model for showcasing development of KKT conditions for an NLP.
+One dummy equations is replaced with KKT condition. 
+$offtext
+
 Variables
      sssdef_m(i)  'multipler for equation sssdef(i)'
      tttdef_m(j)  'multipler for equations tttdef(j)'
