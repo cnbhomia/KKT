@@ -12,11 +12,11 @@ B 119 Column Listing      SOLVE nlpkkt Using MCP From line 107
 E 120 ttt
 E 146 sss
 E 169 x
-E 192 p
-E 218 q
-E 240 r1
-E 250 r2
-E 258 s1
+E 192 sssdef_m
+E 218 tttdef_m
+E 240 esum_m
+E 250 ssum_m
+E 258 allbnd_m
 B 281 Model Statistics    SOLVE nlpkkt Using MCP From line 107
 B 299 Solution Report     SOLVE nlpkkt Using MCP From line 107
 F 332 dLdttt
@@ -30,9 +30,9 @@ F 381 allBnd
 G 382 ttt
 G 393 sss
 G 401 x
-G 412 p
-G 420 q
-G 431 r1
-G 435 r2
-G 436 s1
+G 412 sssdef_m
+G 420 tttdef_m
+G 431 esum_m
+G 435 ssum_m
+G 436 allbnd_m
 B 451 E x e c u t i o n

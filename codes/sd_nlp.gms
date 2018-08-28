@@ -18,7 +18,7 @@ Equations
     obj 'objective function'
     ;
 obj.. R =e= - 200 * h**(2/3) * s**(1/3) ;
-con1.. 20*h + 170*s =l= budget;
+con1.. labor*h + steel*s =l= budget;
 
 h.l=10;
 s.l=10;

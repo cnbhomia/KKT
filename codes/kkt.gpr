@@ -1,1 +1,22 @@
 [PROJECT]
+
+[OPENWINDOW_1]
+MAXIM=0
+TOP=50
+LEFT=50
+HEIGHT=400
+WIDTH=798
+
+[RP:EX2]
+1=save xyz
+2=
+
+[RP:EX2KKT0]
+1=restart xyz
+2=restart xyz lo=2
+
+[MRUFILES]
+1=C:\Users\cnbho\Documents\GitHub\KKT\codes\EX2KKT0.lst
+2=C:\Users\cnbho\Documents\GitHub\KKT\codes\EX2KKT0.gms
+3=C:\Users\cnbho\Documents\GitHub\KKT\codes\EX2.gms
+4=C:\Users\cnbho\Documents\GitHub\KKT\codes\EX2.lst

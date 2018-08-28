@@ -14,4 +14,4 @@ model kkt /dLdh.h,dLds.s,con1.con1_m/;
 kkt.iterlim=0;
 solve kkt using MCP;
 
-abort $(kkt.objval >1e-5) 'We should start at a solution';
+abort $(kkt.objval >1e-5) 'We did not start at a solution';
