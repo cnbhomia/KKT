@@ -20,31 +20,29 @@
 \section{Introduction}
 
 The article is aimed at assisting users interested in writing KKT conditions of their formulation and convert the optimization problem into
-complimentarity problem. Though GAMS allows users to solve non-linear problem (NLP) as an Mixed Complimentarity Problem (MCP) using the
+complementarity problem. Though GAMS allows users to solve non-linear problem (NLP) as an Mixed complementarity Problem (MCP) using the
 EMP solver, it is often advantageous for users to explicitly model the KKT conditions and the respective marginals in their model.
-This article focuses on providing a structured approach towards reformulating NLP model as MCP model by systematically introducing the KKT
-conditions, with marginals and their bounds. The article can be extended to help debug an existing KKT system in model.
+This article focuses on providing a structured approach towards the same by systematically introducing the KKT
+conditions and the marginals with their bounds. The article can be extended to help debug an existing KKT system in model.
 
 
 Consider the simple example described in the \href{https://www.gams.com/latest/docs/S_PATH.html}{PATH} solver manual using the example of a Linear Transportation model.
 The traditional model of fixed demand and price is made more realistic by making the variables endogenous, i.e. the price of commodity is market affects the demand of the
-commodity, and the model is solved as a complimentarily problem.  At times the complexity of the model leads to errors in formulation of optimality (KKT) conditions,
+commodity, and the model is solved as a complementarily problem.  At times the complexity of the model leads to errors in formulation of optimality (KKT) conditions,
 leading to incorrect or infeasible solutions. Finding the source of the error can be a particularly tedious task. The systematic scheme described in the article can
 help users formulate error free MCP models for their NLP systems.
 
-For a standard MCP tasked with finding a solution vector  $z \in \!R$ that is complimentary to a function $F(z) : {\!R}^n \mapsto {\!R}^n$,
+For a standard MCP tasked with finding a solution vector  $z \in \!R$ that is complementary to a function $F(z) : {\!R}^n \mapsto {\!R}^n$,
 lower bounds $ l \in { \!R \cup {-\infty}}^n$ and upper bounds $ u \in { \!R \cup {\infty}}^n$ for each $ i \in {1,...,n}$, if one of the following three
-condition holds hen function $F$ is said to complementary to the variable $z$ and its bounds:
+condition holds then function $F$ is said to complementary to the variable $z$ and its bounds:
 
  \centerline{$F_{i}(z) = 0$  and  $ l_i \leq z_i \leq u_i $   or}
  \centerline{$F_{i}(z) > 0$  and  $ z_i = l_i$  or }
  \centerline{ $F_{i}(z) < 0$  and  $ z_i = u_i$ }
 
-\noindent This is written in compact form as:
-\centerline{ $ F(z) \perp L \leq z \leq U $ }
-\par
-\noindent Where the symbol $\perp$ means "perpendicular to". For a NLP model, the optimization constraints and their respective marginals must be
-perpendicular to each other for an optimum solution to exist. Consider the following generalized NLP formulation.
+\noindent This is written in compact form as $ F(z) \perp L \leq z \leq U $, where the symbol $\perp$ means "perpendicular to". For a NLP model,
+the optimization constraints and their respective marginals must be perpendicular to each other for an optimum solution to exist. Consider the
+generalized minimization problem
 
 \begin{equation}
 \begin{aligned}
@@ -59,7 +57,7 @@ perpendicular to each other for an optimum solution to exist. Consider the follo
 \end{aligned}
 \end{equation}
 
-\noindent The Lagrange function, KKT conditions and their multipliers in complimentarity form can be written as \\
+\noindent For the above problem, the Lagrange function, KKT conditions and the multipliers in complementarity form can be written as \\
 
 \begin{equation}
 \begin{aligned}
@@ -72,8 +70,8 @@ perpendicular to each other for an optimum solution to exist. Consider the follo
 \end{equation}
 
 \noindent It should be noted that the gradient of Lagrangian w.r.t to the marginals from NLP is the constraint itself. Thus an NLP can be solved as an MCP
-using the KKT conditions. However, formulating the KKT conditions might prove difficult for complex systems, and require verification of their accuracy.
-In the following sections, we provide the framework for modeling the KKT conditions  by using concept of dummy complementarity equations in the KKT formulation.
+using the KKT conditions. However, formulating the KKT conditions might prove difficult for complex systems and may require verification of their accuracy.
+In the following sections, we provide the framework for modeling the KKT conditions by using concept of dummy complementarity equations in the KKT formulation.
 The process includes the following steps:
 
 
@@ -93,24 +91,24 @@ and,\\
 \end{aligned}
 \end{equation}
 
-where $<u_{i},g_{i}(x)> = 0$  represent the complimentarily condition and variables u, v, and w represent the marginals of the respective constraint. It is often written as
+where $<u_{i},g_{i}(x)> = 0$  represent the complementarity condition and variables u, v, and w represent the marginals of the respective constraint. It is often written as
 
  $g_{i}(x) \perp L \leq u \leq U $
 
-where symbol $\perp $(referred to as perpendicular  to) indicates pair-wise complementarity between the function g() and variable u and its bounds. The complimentarity condition essentially
+where symbol $\perp $(referred to as perpendicular  to) indicates pair-wise complementarity between the function g() and variable u and its bounds. The complementarity condition essentially
 
 \end{comment}
 %--------------------------------------%--------------------------------------%--------------------------------------%--------------------------------------
 
 
 \begin{enumerate}
-	\item Solve NLP model formulation, and save the results using \href{https://www.gams.com/latest/docs/UG_SaveRestart.html}{Save and Restart Feature}
+	\item Solve NLP model formulation and save the solution point using \href{https://www.gams.com/latest/docs/UG_SaveRestart.html}{Save and Restart} Feature
 	\item	Reformulate the model as an MCP by adding dummy KKT conditions into the model.
   \item Solve the MCP using solution from step 1 as initial point. The MCP should start at the solution itself
 	\item Replace one dummy equation at a time with one KKT condition. Resolve the NLP and save the results
 	\item Restart the problem as MCP with iterlim=0. Objective value should match the results from NLP.
 \end{enumerate}
-\noindent Follow steps 3 and 4 until all KKT conditions have been successfully incorporated.
+\noindent Follow steps 4 and 5 until all KKT conditions have been successfully incorporated.
 
 
 \section{Example : Maximum Revenue- NLP formulation}
@@ -133,11 +131,11 @@ The objective is to maximize revenue under the budget and manpower constraints.
 \end{aligned}
 \end{equation}
 
-The GAMS program below gives the optimum values of \lstinputlisting{codes/factors.txt}
+The GAMS program below solves for the following optimum values  \lstinputlisting{codes/factors.txt}
 The results of the program are saved using command line option \textit{"save filename"}
 \lstinputlisting {codes/sd_nlp.gms}
 
-\noindent For the given system, the KKT conditions are given as
+\noindent For the given system, the KKT conditions are :
 
 \begin{equation}
 \begin{aligned}
@@ -148,7 +146,7 @@ The results of the program are saved using command line option \textit{"save fil
 \end{aligned}
 \end{equation}
 
-\noindent It should be noted that the third KKT equation which is gradient of Lagrangean w.r.t to the marginal, is the inequality budget
+\noindent It should be noted that the third KKT equation which is gradient of Lagrangean w.r.t to the marginal of constraint $con1$, is the budget
 constraint from original NLP model. The above equations are solved as an MCP model using the results saved in the initial run using command line
 option \textit{'restart filename'}.
 In the model below, an error has been made in one of the KKT conditions. Execution of the model terminates due to the abort statement,
@@ -158,12 +156,12 @@ with declaration \textit{'We did not start at a solution'} as shown in the subse
 \lstinputlisting{codes/sd_kkt.log}
 
 \noindent In case \textit{abort} statement is not used, the MCP formulationl will return a solution different from the NLP formulation, indicating
-error in one of the KKT conditions. From simple observation, we can see that a typographical error was made with the multiplier of \textit{con1\_m}
-in equation \textit{dLdh}, which when corrected provides results consistent with the NLP formulation.
+error in one of the KKT conditions. From simple observation, we can see that a typographical error was made with the coefficient of \textit{con1\_m}
+in equation \textit{dLdh}, which when corrected provides solution consistent with the NLP formulation.
 
 However, mere observation does not help with larger, more complex  systems. A strategy, as described in Section 1 is required to effectively correct the model.
-In the given case, the MCP formulation can be first solved using dummy KKT conditions shown below. These conditions can then be replaced
-one at a time with the real KKT equations derived earlier.
+In the given case, the MCP formulation can be first solved using dummy KKT conditions shown below. These conditions are then replaced
+one at a time with the real KKT equations.
 
 \lstinputlisting{codes/sd_kkt_dummy.gms}
 
@@ -172,18 +170,17 @@ one at a time with the real KKT equations derived earlier.
 Writing dummy condition, as straightforward as it may seem requires consideration of few salient points to avoid errors from the GAMS compiler.
 
 \begin{enumerate}
-	\item A new variable is needed to represent marginals of each constraint from NLP (eg. $con1\_m$ from above example)
+	\item A new variable is needed to represent marginals of each constraint from NLP
   \item Number of dummy equations must equal number variables in the NLP formulation
-	\item Each dummy KKT condition must be accompanied by its differentiating variable fixed at the var.L value from the save run of NLP
-	\item Each KKT condition must be modeled with the differentiating variable for the condition. i.e. $dLdh \perp h$,
-        and is modeled as $dLdh.h$ in the model statement
-	\item All variables from both NLP and MCP formulation must appear in one of the dummy KKT conditions
-  \item Replacing a dummy equation must be accompanied by un-fixing the value of variable, per the concept of complimentarity.
+	\item Dummy KKT condition must be accompanied by its differentiating variable fixed at the var.L value from the NLP solution
+	\item KKT condition are modeled with the respective differentiating variable i.e. $dLdh \perp h$,
+  \item NLP constratins are modeled with the respective marginals i.e. $con1 \perp con1\_m$
+	\item All variables from both NLP and MCP formulation must appear in atleast one of the dummy KKT conditions
+  \item Replacing a dummy equation must be accompanied by un-fixing the value of variable (var.L from step 3), per the concept of complementarity.
 
 \end{enumerate}
 
-Since order of replacing dummy quation is irrelevant, it is easy to miss variable in model. For simplicity and to ensure that all variables are
-part of the model at all times, the variables can be placed in a single dummy equation replaced at the very end.
+For simplicity and to ensure that all variables are part of the model at all times, the variables can be placed in a single dummy equation replaced at the very end.
 
 
 \section{KKT Development for complex systems}

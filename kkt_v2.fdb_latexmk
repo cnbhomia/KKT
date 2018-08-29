@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1535491791 "kkt_v2.tex" "kkt_v2.pdf" "kkt_v2" 1535491792
+["pdflatex"] 1535560774 "kkt_v2.tex" "kkt_v2.pdf" "kkt_v2" 1535560776
   "c:/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map" 1529941108 3332 103109f5612ad95229751940c61aada0 ""
   "c:/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1529940061 1004 54797486969f23fa377b128694d548df ""
   "c:/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1529940061 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -78,7 +78,7 @@
   "c:/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1529943349 2876725 68d401ca7fc797323b2bf67b716044cd ""
   "c:/texlive/2018/texmf-var/web2c/pdftex/pdflatex.fmt" 1529943521 4216806 6b01f12c85e54b7539d3c87078a53102 ""
   "c:/texlive/2018/texmf.cnf" 1529943319 673 4ae7b2f49cee444c5343a45b5d0f169c ""
-  "codes/EX2.gms" 1535490075 1700 87237df01cb7a58c549e9021cb7fa33c ""
+  "codes/EX2.gms" 1535494078 1658 ac7a6ac83fdcec1d15279f2c8c0dfe2d ""
   "codes/EX2.txt" 1535475234 477 d2d220bbff7af22ccc53eb45baaff04e ""
   "codes/EX2KKT0.gms" 1535490123 1425 b22c0fc04c023bb063f1d0baea1efb97 ""
   "codes/EX2KKT0.log" 1535475234 2241 53b126cefcd899aef889fd7ea9556259 ""
@@ -91,11 +91,11 @@
   "codes/sd_kkt.log" 1535475234 2391 02daaf010503fb6d20edd1fb9a8c315c ""
   "codes/sd_kkt_dummy.gms" 1535475234 120 3ff66eeabef605716d47a1d96ee89ac4 ""
   "codes/sd_nlp.gms" 1535489709 781 a9ad08e0db73d5dbfeab1a2c055b40dc ""
-  "kkt_v2.aux" 1535491792 2343 a238520c528680096184a205e9db150e ""
-  "kkt_v2.out" 1535491792 355 d603307e25cbbe7be26892430dcef3c5 ""
-  "kkt_v2.tex" 1535491756 14051 48f9a1c392a35eece38bee5480011d95 ""
+  "kkt_v2.aux" 1535560775 2343 a238520c528680096184a205e9db150e ""
+  "kkt_v2.out" 1535560775 355 d603307e25cbbe7be26892430dcef3c5 ""
+  "kkt_v2.tex" 1535560770 13966 1369bed5c0ceafbfb2707e06d2757d78 ""
   (generated)
-  "kkt_v2.out"
-  "kkt_v2.aux"
   "kkt_v2.log"
   "kkt_v2.pdf"
+  "kkt_v2.aux"
+  "kkt_v2.out"
