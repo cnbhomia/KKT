@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1537291779 "how_to_write_KKT.tex" "how_to_write_KKT.pdf" "how_to_write_KKT" 1537291781
+["pdflatex"] 1537294850 "how_to_write_KKT.tex" "how_to_write_KKT.pdf" "how_to_write_KKT" 1537294851
   "c:/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map" 1529941108 3332 103109f5612ad95229751940c61aada0 ""
   "c:/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1529940061 1004 54797486969f23fa377b128694d548df ""
   "c:/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1529940061 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -91,11 +91,11 @@
   "codes/sd_kkt.log" 1535475234 2391 02daaf010503fb6d20edd1fb9a8c315c ""
   "codes/sd_kkt_dummy.gms" 1535475234 120 3ff66eeabef605716d47a1d96ee89ac4 ""
   "codes/sd_nlp.gms" 1535489709 781 a9ad08e0db73d5dbfeab1a2c055b40dc ""
-  "how_to_write_KKT.aux" 1537291781 2343 a238520c528680096184a205e9db150e ""
-  "how_to_write_KKT.out" 1537291781 355 d603307e25cbbe7be26892430dcef3c5 ""
-  "how_to_write_KKT.tex" 1535491761 14051 48f9a1c392a35eece38bee5480011d95 ""
+  "how_to_write_KKT.aux" 1537294851 2348 7e63f79db3829ca0ce7b3fc6252c9203 ""
+  "how_to_write_KKT.out" 1537294851 360 2256fa2379578f4633701fc5acaf8a90 ""
+  "how_to_write_KKT.tex" 1537294842 12697 bc3cd73d6baae10a4f9bd1fd84991626 ""
   (generated)
-  "how_to_write_KKT.pdf"
-  "how_to_write_KKT.log"
   "how_to_write_KKT.aux"
   "how_to_write_KKT.out"
+  "how_to_write_KKT.log"
+  "how_to_write_KKT.pdf"
